@@ -2,54 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+/// <summary>
+/// Process the player's inputs and enable movement around the level
+/// </summary>
+public class PlayerMovement : MonoBehaviour
 {
 
-    /**************************************
-     * Set up the PlayerManager singleton *
-     *************************************/
-
-    private static PlayerManager _instance;
-
-    public static PlayerManager Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-
-
-
-    /*************************
-     * GameObject References *
-     *************************/
-
-    public GameObject Player { get { return gameObject; } }
-
-    public GameObject Paper;
-
-
-
-    /*******************
-     * Local Variables *
-     *******************/
+    // The parent player object
+    private GameObject Player { get { return gameObject; } }
 
     /// <summary>
     /// Provide the translation table for converting the player's simplified position coordinates into
     /// real 2D coordinates for the level.
     /// TODO: move this 2d array to the current level's object
     /// </summary>
-    private Vector2[,] LOCATIONS = new Vector2[3, 3] {
-        { new Vector2(-10.3f, 2.35f), new Vector2(-8f, 2.35f), new Vector2(-5.5f, 2.35f) },
-        { new Vector2(-10.3f, 1.7f), new Vector2(-8f, 1.7f), new Vector2(-5.5f, 1.7f) },
-        { new Vector2(-10.3f, 0.8f), new Vector2(-8f, 0.8f), new Vector2(-5.5f, 0.8f) }
+    private (float, float)[,] LOCATIONS = new (float, float)[3, 3] {
+        { (-17.69f, 2.77f), (-15.33f, 2.77f), (-12.96f, 2.77f) },
+        { (-17.69f, 2.1695f), (-15.33f, 2.1695f), (-12.96f, 2.1695f) },
+        { (-17.69f, 1.44f), (-15.33f, 1.44f), (-12.96f, 1.44f) }
     };
 
     /**
@@ -60,23 +30,30 @@ public class PlayerManager : MonoBehaviour
      */
 
     /// <summary>
-    /// The player's position in the predefined grid of movements
+    /// A tuple of the player's position in the predefined grid of movements
     /// </summary>
     private (int, int) position = (1, 1);
 
+    /// <summary>
+    /// Represent the direction the player will turn if they enter that input
+    /// </summary>
+    public string turnPossibility = null;
 
-
-    /********************
-     * Member Functions *
-     ********************/
+    private string GetCurrentDirection()
+    {
+        if (Player.transform.rotation.eulerAngles.y == 0) return "forward";
+        else if (Player.transform.rotation.eulerAngles.y == 90) return "right";
+        else if (Player.transform.rotation.eulerAngles.y == -90) return "left";
+        else return "back";
+    }
 
     /// <summary>
     /// Translate the player's simplified coordinates into the 3D space
     /// </summary>
-    private Vector3 GetChosenPositionVector()
+    private Vector3 GetChosen2DVector()
     {
-        Vector2 face = LOCATIONS[position.Item1, position.Item2];
-        return new Vector3(face.x, face.y, Player.transform.position.z);
+        (float, float) face = LOCATIONS[position.Item1, position.Item2];
+        return new Vector3(face.Item1, face.Item2, Player.transform.position.z);
     }
 
     /// <summary>
@@ -105,9 +82,11 @@ public class PlayerManager : MonoBehaviour
                 break;
             case "right":
                 if (position.Item2 < 2) position.Item2++;
+                if (turnPossibility == "right") Player.transform.Rotate(0f, 90f, 0f);
                 break;
             case "left":
                 if (position.Item2 > 0) position.Item2--;
+                if (turnPossibility == "right") Player.transform.Rotate(0f, -90f, 0f);
                 break;
             default:
                 Debug.Log("called Move() with invalid direction");
@@ -117,13 +96,17 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(GetCurrentDirection());
+
         // Check for new inputs every frame
         MoveWithInputs();
 
         // Move forward infinitely
-        Player.transform.position += Vector3.forward * Time.deltaTime * 2;
+        Vector3 forwardVector = Player.transform.rotation * Vector3.forward;
+        Player.transform.position += forwardVector * Time.deltaTime * 2;
 
         // Linearly interpolate (lerp) from player's current position to the chosen position based on player's input
-        Player.transform.position = Vector3.Lerp(Player.transform.position, this.GetChosenPositionVector(), Time.deltaTime * 5);
+        Player.transform.position = Vector3.Lerp(Player.transform.position, this.GetChosen2DVector(), Time.deltaTime * 5);
     }
+
 }
