@@ -1,0 +1,32 @@
+Thank you for Buying the Low Poly Office Props - Full Version.
+This version will recieve regular updates with more props in store from this first release.
+
+In this pack you will find 3 scripts of which animate the Fan and the Clock. The Clock will show your current system time.
+The Fan Speed can be changed and on which Axis, so can be used for other spinning things if you need. Another script is used to generate prefabs
+from the scene (handy!).
+
+Most of the Props in the scene use a single material atlas and can be modified to change the overall look and feel of your game.
+If you want the Low-Poly faceted look, then navigate to the meshes folder and change the normals to 'calculate' and set the angle very low, even to 0.
+
+Alot of time was taken to set the smoothing angled in the native 3D model software so you may wish to leave them as is for the most desired look.
+
+This pack is the Full Version of Low Poly Office Props LITE and works well with the Low Poly Business people and also Future Low Poly ranges from my store.
+
+The Vases Use their own Atlas system on a 4k texture Map.
+The Ceilings use their own Atlas System.
+
+Some Objects such as Lights use the Emissive material but do not actually casting lights, be sure to place lights in your scene to make them seem more effective and realistic.
+
+All objects have been given basic UV2 mappings, for Lightmaps. To bake lightmaps, set the objects you wish to be part of baked lighting to Static.
+Also set your slights to 'baked' or Mixed for the effect to take place you will need to generate the Lightmaps via the Lighting tab.
+
+The Current scene is purely for show and not optimised, it also uses the Post Process Stack, the Post process profile has been created for you.
+It is in the Misc Folder and is called PPP_LPOP there is also a timeline for some camera animation.
+For best optimisation, set objects that will not animate or move to static, change your lights to baked and bake a lightmap.
+
+Please Look out for future updates of this pack and also other Low-Poly releases on RRFreelance.
+Contact me@robertramsay.co.uk for one-to-one help, requests or even to talk about what is in store.
+
+Thank you
+Robert Ramsay - RRFreelance
+Version 1.0 November 12th 2018.
