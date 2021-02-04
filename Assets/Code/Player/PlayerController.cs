@@ -7,11 +7,6 @@ public class PlayerController : MonoBehaviour
 
     public PlayerMovement MovementController;
 
-    public void SetTurnPossibility(string direction)
-    {
-        MovementController.turnPossibility = direction;
-    }
-
     // Start is called before the first frame update
     void Start()
     {

@@ -35,19 +35,6 @@ public class PlayerMovement : MonoBehaviour
     private (int, int) position = (1, 1);
 
     /// <summary>
-    /// Represent the direction the player will turn if they enter that input
-    /// </summary>
-    public string turnPossibility = null;
-
-    private string GetCurrentDirection()
-    {
-        if (Player.transform.rotation.eulerAngles.y == 0) return "forward";
-        else if (Player.transform.rotation.eulerAngles.y == 90) return "right";
-        else if (Player.transform.rotation.eulerAngles.y == -90) return "left";
-        else return "back";
-    }
-
-    /// <summary>
     /// Translate the player's simplified coordinates into the 3D space
     /// </summary>
     private Vector3 GetChosen2DVector()
@@ -82,11 +69,9 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case "right":
                 if (position.Item2 < 2) position.Item2++;
-                if (turnPossibility == "right") Player.transform.Rotate(0f, 90f, 0f);
                 break;
             case "left":
                 if (position.Item2 > 0) position.Item2--;
-                if (turnPossibility == "right") Player.transform.Rotate(0f, -90f, 0f);
                 break;
             default:
                 Debug.Log("called Move() with invalid direction");
@@ -96,8 +81,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(GetCurrentDirection());
-
         // Check for new inputs every frame
         MoveWithInputs();
 
