@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed = 5f;
 
-    public GameObject PaperObject;
+    public float FlipSpeed = 5f;
 
     /**
      * Default (1,1):       Right (1, 2):       Upper Right (0, 2):
@@ -25,31 +25,31 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// A tuple of the player's position in the predefined grid of movements
     /// </summary>
-    private (int, int) position = (1, 1);
+    private (int, int) Position = (1, 1);
 
     /// <summary>
     /// The player's directional heading (0 is forward, 90 is right, -90 is left)
     /// </summary>
-    private int rotation = 0;
+    [HideInInspector]
+    public int Rotation = 0;
 
     /// <summary>
     /// The direction a player could possibly turn. Determined by a trigger collider.
     /// </summary>
     [HideInInspector]
-    public string turnPossibility = null;
+    public string TurnPossibility = null;
 
-    private Vector3 GetCellVector(string cellTag)
+    /// <summary>
+    /// Return the 3D position of the cell using the player's position tuple
+    /// </summary>
+    private Vector3 GetChosen3DVector()
     {
+        string cellTag = string.Format("({0},{1})", Position.Item1, Position.Item2);
+
         GameObject parent = GameObject.FindGameObjectWithTag("preturn");
         if (parent == null) parent = GameObject.FindGameObjectWithTag("postturn");
 
         return parent.transform.Find(cellTag).transform.position;
-    }
-
-    private Vector3 GetChosen3DVector()
-    {
-        string cellTag = string.Format("({0},{1})", position.Item1, position.Item2);
-        return GetCellVector(cellTag);
     }
 
     /// <summary>
@@ -58,11 +58,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetChosen2DVector(Vector3 cell)
     {
         float yAngle = Player.transform.rotation.eulerAngles.y;
-        if (rotation == 0)
+        int rotation = Utils.ResetAngle(Rotation);
+
+        if (rotation == 0 || rotation == 180)
         {
             return new Vector3(cell.x, cell.y, Player.transform.position.z);
         }
-        else if (rotation == 90)
+        else if (rotation == 90 || rotation == -90)
         {
             return new Vector3(Player.transform.position.x, cell.y, cell.z);
         }
@@ -92,43 +94,43 @@ public class PlayerMovement : MonoBehaviour
         switch (dir)
         {
             case "down":
-                if (position.Item1 < 2)
+                if (Position.Item1 < 2)
                 {
-                    position.Item1++;
+                    Position.Item1++;
                     PlayerManager.Instance.Controller.TriggerAnimation("Flip Down");
                 }
                 break;
             case "up":
-                if (position.Item1 > 0)
+                if (Position.Item1 > 0)
                 {
-                    position.Item1--;
+                    Position.Item1--;
                     PlayerManager.Instance.Controller.TriggerAnimation("Flip Up");
                 }
                 break;
             case "right":
-                if (turnPossibility == "right")
+                if (TurnPossibility == "right")
                 {
                     TurnDirection("right");
                     break;
                 }
 
-                if (position.Item2 < 2)
+                if (Position.Item2 < 2)
                 {
-                    position.Item2++;
+                    Position.Item2++;
                     PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
                 }
 
                 break;
             case "left":
-                if (turnPossibility == "left")
+                if (TurnPossibility == "left")
                 {
                     TurnDirection("left");
                     break;
                 }
 
-                if (position.Item2 > 0)
+                if (Position.Item2 > 0)
                 {
-                    position.Item2--;
+                    Position.Item2--;
                     PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
                 }
 
@@ -139,26 +141,65 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update the player's rotation to move in the new direction
+    /// </summary>
     private void TurnDirection(string dir)
     {
         if (GameObject.FindGameObjectWithTag("preturn") == null) return;
 
         Destroy(GameObject.FindGameObjectWithTag("preturn"));
-        turnPossibility = null;
+        TurnPossibility = null;
 
         if (dir == "right")
         {
-            rotation = 90;
-            PlayerManager.Instance.Controller.TriggerAnimation("Turn Right");
+            Rotation = Utils.ResetAngle(Rotation + 90);
+            PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
         }
-        if (dir == "left")
+        else if (dir == "left")
         {
-            rotation = -90;
-            PlayerManager.Instance.Controller.TriggerAnimation("Turn Left");
+            Rotation = Utils.ResetAngle(Rotation - 90);
+            PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
         }
 
+        this.PlayRotateAnimation(dir);
+
         // Reset movement grid cell to center
-        position = (1, 1);
+        Position = (1, 1);
+    }
+
+    /// <summary>
+    /// Play the appropriate rotation animation based on the old and new directions
+    /// </summary>
+    private void PlayRotateAnimation(string dir)
+    {
+        switch (Rotation)
+        {
+            case 0:
+                if (dir == "right")
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Forward");
+                else
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Forward");
+                break;
+            case 90:
+                if (dir == "right")
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Right");
+                else
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Right");
+                break;
+            case 180:
+                if (dir == "right")
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Back");
+                else
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Back");
+                break;
+            case -90:
+                if (dir == "right")
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Left");
+                else
+                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Left");
+                break;
+        }
     }
 
     void Update()
@@ -173,9 +214,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Linearly interpolate (lerp) from player's current position to the chosen movement grid cell on the 2D plane
         if (Player.transform.rotation.eulerAngles.y % 90 == 0)
-            Player.transform.position = Vector3.Lerp(Player.transform.position, this.GetChosen2DVector(movementGridCell), Time.deltaTime * 5);
-
-        Player.transform.rotation = Quaternion.RotateTowards(Player.transform.rotation, Quaternion.Euler(0f, rotation, 0f), Time.deltaTime * 500);
+            Player.transform.position = Vector3.Lerp(Player.transform.position, this.GetChosen2DVector(movementGridCell), Time.deltaTime * FlipSpeed);
     }
 
 }

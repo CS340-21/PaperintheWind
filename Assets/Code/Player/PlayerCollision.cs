@@ -5,18 +5,16 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("collided with obstacle " + other.gameObject.name);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "turn")
         {
             string dir = other.gameObject.name.Split(' ')[0].ToLower();
             PlayerManager.Instance.Controller.SetTurnPossibility(dir);
+            return;
         }
+
+        Debug.Log("collide with obstacle " + other.gameObject.name);
     }
 
     void OnTriggerExit(Collider other)

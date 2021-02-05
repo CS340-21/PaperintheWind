@@ -6,21 +6,33 @@ public class PlayerController : MonoBehaviour
 {
 
     public PlayerMovement MovementController;
-    public Animator AnimationController;
+    public Animator PaperAnimation;
+    public Animator PlayerAnimation;
+
+    public void Teleport(Vector3 pos)
+    {
+        transform.position = pos;
+        MovementController.Rotation = 0;
+    }
 
     public void SetTurnPossibility(string dir)
     {
-        MovementController.turnPossibility = dir;
+        MovementController.TurnPossibility = dir;
     }
 
     public void PlayAnimation(string state)
     {
-        AnimationController.Play(state);
+        PaperAnimation.Play(state);
+    }
+
+    public void PlayParentAnimation(string state)
+    {
+        PlayerAnimation.Play(state);
     }
 
     public void TriggerAnimation(string triggerName)
     {
-        AnimationController.SetTrigger(triggerName);
+        PaperAnimation.SetTrigger(triggerName);
     }
 
     // Start is called before the first frame update
