@@ -11,8 +11,12 @@ public class PlayerMovement : MonoBehaviour
     // The parent player object
     private GameObject Player { get { return gameObject; } }
 
+    private InputSource Inputs;
+
+    // The player's forward movement speed
     public float Speed = 5f;
 
+    // The player's left and right movement speed
     public float FlipSpeed = 5f;
 
     /**
@@ -76,65 +80,52 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Listen for the currently selected inputs and move accordingly
-    /// </summary>
-    private void MoveWithInputs()
-    {
-        if (Input.GetKeyDown("right")) MoveDirection("right");
-        if (Input.GetKeyDown("left")) MoveDirection("left");
-        if (Input.GetKeyDown("down")) MoveDirection("down");
-        if (Input.GetKeyDown("up")) MoveDirection("up");
-    }
-
-    /// <summary>
     /// Update the player's position grid based on the given direction
     /// </summary>
-    private void MoveDirection(string dir)
+    public void MoveDirection(string dir)
     {
+        PlayerController controller = PlayerManager.Instance.Controller;
+
         switch (dir)
         {
             case "down":
-                if (Position.Item1 < 2)
-                {
-                    Position.Item1++;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Down");
-                }
+                if (Position.Item1 >= 2) break;
+
+                Position.Item1++;
+                controller.TriggerAnimation("Flip Down");
                 break;
+
             case "up":
-                if (Position.Item1 > 0)
-                {
-                    Position.Item1--;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Up");
-                }
+                if (Position.Item1 <= 0) break;
+
+                Position.Item1--;
+                controller.TriggerAnimation("Flip Up");
                 break;
+
             case "right":
                 if (TurnPossibility == "right")
                 {
                     TurnDirection("right");
                     break;
                 }
+                if (Position.Item2 >= 2) break;
 
-                if (Position.Item2 < 2)
-                {
-                    Position.Item2++;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
-                }
-
+                Position.Item2++;
+                controller.TriggerAnimation("Flip Right");
                 break;
+
             case "left":
                 if (TurnPossibility == "left")
                 {
                     TurnDirection("left");
                     break;
                 }
+                if (Position.Item2 <= 0) break;
 
-                if (Position.Item2 > 0)
-                {
-                    Position.Item2--;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
-                }
-
+                Position.Item2--;
+                controller.TriggerAnimation("Flip Left");
                 break;
+
             default:
                 Debug.Log("called Move() with invalid direction");
                 break;
@@ -147,8 +138,8 @@ public class PlayerMovement : MonoBehaviour
     private void TurnDirection(string dir)
     {
         if (GameObject.FindGameObjectWithTag("preturn") == null) return;
-
         Destroy(GameObject.FindGameObjectWithTag("preturn"));
+
         TurnPossibility = null;
 
         if (dir == "right")
@@ -173,31 +164,48 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void PlayRotateAnimation(string dir)
     {
+        PlayerController controller = PlayerManager.Instance.Controller;
+
         switch (Rotation)
         {
             case 0:
                 if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Forward");
+                    controller.PlayParentAnimation("Rotate Left-Forward");
                 else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Forward");
-                break;
-            case 90:
-                if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Right");
-                else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Right");
-                break;
-            case 180:
-                if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Back");
-                else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Back");
+                    controller.PlayParentAnimation("Rotate Right-Forward");
                 break;
             case -90:
                 if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Left");
+                    controller.PlayParentAnimation("Rotate Back-Left");
                 else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Left");
+                    controller.PlayParentAnimation("Rotate Forward-Left");
+                break;
+            case 90:
+                if (dir == "right")
+                    controller.PlayParentAnimation("Rotate Forward-Right");
+                else
+                    controller.PlayParentAnimation("Rotate Back-Right");
+                break;
+            case 180:
+                if (dir == "right")
+                    controller.PlayParentAnimation("Rotate Right-Back");
+                else
+                    controller.PlayParentAnimation("Rotate Left-Back");
+                break;
+        }
+    }
+
+    void Awake()
+    {
+        // Detect platform and change input source accordingly
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+            case RuntimePlatform.IPhonePlayer:
+                Inputs = new TouchInput();
+                break;
+            default:
+                Inputs = new KeyboardInput();
                 break;
         }
     }
@@ -205,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Check for new inputs every frame
-        MoveWithInputs();
+        Inputs.ProcessInput();
 
         Vector3 movementGridCell = this.GetChosen3DVector();
 
