@@ -1,7 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Utils
 {
+
+    public static T GetRandom<T>(T[] list)
+    {
+        return list[Random.Range(0, list.Length - 1)];
+    }
 
     public static int ResetAngle(int angle)
     {

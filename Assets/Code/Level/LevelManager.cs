@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
         {
             _instance = this;
         }
+
+        Levels[0].BeginLevel();
     }
 
     public Level[] Levels;

@@ -16,6 +16,9 @@ TagManager:
   - turn
   - preturn
   - postturn
+  - section_end
+  - section_begin
+  - section_spawn
   layers:
   - Default
   - TransparentFX

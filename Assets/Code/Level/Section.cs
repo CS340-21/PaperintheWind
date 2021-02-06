@@ -12,7 +12,39 @@ public class Section : MonoBehaviour
     //          to Section 1 EndSignalObject, then reset with BeginSignalObject.SetParent(transform.Transform, true)
 
     public int BeginRotation;
+
     public int EndRotation;
+
+    public GameObject Spawn { get { return this.transform.Find("Spawn").gameObject; } }
+
+    public GameObject Beginning { get { return this.transform.Find("Signals/Begin").gameObject; } }
+
+    public GameObject Ending { get { return this.transform.Find("Signals/End").gameObject; } }
+
+    public GameObject PreTurn
+    {
+        get
+        {
+            if (this.transform.Find("MoveGrid/PreTurn") == null) return null;
+            return this.transform.Find("MoveGrid/PreTurn").gameObject;
+        }
+    }
+
+    public GameObject PostTurn
+    {
+        get
+        {
+            if (this.transform.Find("MoveGrid/PostTurn") == null) return null;
+            return this.transform.Find("MoveGrid/PostTurn").gameObject;
+        }
+    }
+
+    // mvoe beginning object to given position, bringing all objects with
+    public void AlignWithSection(Section section)
+    {
+        Vector3 absoluteMovement = section.Ending.transform.position - this.Beginning.transform.position;
+        this.transform.position += absoluteMovement;
+    }
 
     // Start is called before the first frame update
     void Start()

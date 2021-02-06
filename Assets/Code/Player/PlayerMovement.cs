@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// The player's directional heading (0 is forward, 90 is right, -90 is left)
     /// </summary>
-    [HideInInspector]
-    public int Rotation = 0;
+    public int Rotation = 90;
 
     /// <summary>
     /// The direction a player could possibly turn. Determined by a trigger collider.
@@ -50,8 +49,8 @@ public class PlayerMovement : MonoBehaviour
     {
         string cellTag = string.Format("({0},{1})", Position.Item1, Position.Item2);
 
-        GameObject parent = GameObject.FindGameObjectWithTag("preturn");
-        if (parent == null) parent = GameObject.FindGameObjectWithTag("postturn");
+        GameObject parent = PlayerManager.Instance.Controller.CurrentSection.PreTurn;
+        if (parent == null) parent = PlayerManager.Instance.Controller.CurrentSection.PostTurn;
 
         return parent.transform.Find(cellTag).transform.position;
     }
@@ -137,8 +136,8 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void TurnDirection(string dir)
     {
-        if (GameObject.FindGameObjectWithTag("preturn") == null) return;
-        Destroy(GameObject.FindGameObjectWithTag("preturn"));
+        if (PlayerManager.Instance.Controller.CurrentSection.PreTurn == null) return;
+        Destroy(PlayerManager.Instance.Controller.CurrentSection.PreTurn);
 
         TurnPossibility = null;
 

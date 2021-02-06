@@ -8,11 +8,21 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement MovementController;
     public Animator PaperAnimation;
     public Animator PlayerAnimation;
+    public Animator CameraAnimation;
 
-    public void Teleport(Vector3 pos)
+    public Section CurrentSection;
+
+    public void Kill()
     {
-        transform.position = pos;
-        MovementController.Rotation = 0;
+        CameraAnimation.SetTrigger("Death");
+        Time.timeScale = 0f;
+        MovementController.Speed = 0f;
+        MovementController.FlipSpeed = 0f;
+    }
+
+    public void Teleport(Transform newTransform)
+    {
+        transform.position = newTransform.position;
     }
 
     public void SetTurnPossibility(string dir)
