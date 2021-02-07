@@ -19,7 +19,7 @@ public class TouchInput : InputSource
 
     private float HorizontalMovement { get { return Mathf.Abs(FingerDown.x - FingerUp.x); } }
 
-    public override void ProcessInput()
+    public override void ProcessInputType()
     {
         if (Time.time - LastSwipeTime < SwipeCooldown) return;
 

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -29,12 +28,12 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// A tuple of the player's position in the predefined grid of movements
     /// </summary>
-    private (int, int) Position = (1, 1);
+    public (int, int) Position = (1, 1);
 
     /// <summary>
     /// The player's directional heading (0 is forward, 90 is right, -90 is left)
     /// </summary>
-    public int Rotation = 90;
+    public int Rotation = 0;
 
     /// <summary>
     /// The direction a player could possibly turn. Determined by a trigger collider.
@@ -73,8 +72,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("player moving in invalid direction?");
-            return new Vector3(cell.x, cell.y, Player.transform.position.z);
+            throw new Exception("player moving in invalid direction " + rotation);
         }
     }
 
@@ -123,10 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
                 Position.Item2--;
                 controller.TriggerAnimation("Flip Left");
-                break;
-
-            default:
-                Debug.Log("called Move() with invalid direction");
                 break;
         }
     }
@@ -212,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Check for new inputs every frame
-        Inputs.ProcessInput();
+        Inputs.Process();
 
         Vector3 movementGridCell = this.GetChosen3DVector();
 

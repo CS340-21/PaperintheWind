@@ -20,9 +20,12 @@ public class LevelManager : MonoBehaviour
             _instance = this;
         }
 
-        Levels[0].BeginLevel();
+        CurrentLevel = Levels[0];
+        CurrentLevel.BeginLevel();
     }
 
     public Level[] Levels;
+
+    public Level CurrentLevel;
 
 }

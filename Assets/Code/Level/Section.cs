@@ -5,14 +5,19 @@ using UnityEngine;
 public class Section : MonoBehaviour
 {
 
-    // TODO:    When generating next section, the begin rotation must be last section's end rotation.
-    //          So if Section 1 EndRotation=90 but Section 2 BeginRotation=0, rotate Section 2 by 90 degrees.
-    //
-    //          Maybe transform.SetParent(BeginSignalObject, true) on the Section 2 parent, move BeginSignalObject
-    //          to Section 1 EndSignalObject, then reset with BeginSignalObject.SetParent(transform.Transform, true)
+    [HideInInspector]
+    public int ID = 0;
 
+    /// <summary>
+    /// This section's rotation at its beginning.
+    /// Used to calculate rotation angles for infinite levels.
+    /// </summary>
     public int BeginRotation;
 
+    /// <summary>
+    /// This section's rotation at its ending. 
+    /// Used to calculate rotation angles for infinite levels.
+    /// </summary>
     public int EndRotation;
 
     public GameObject Spawn { get { return this.transform.Find("Spawn").gameObject; } }
@@ -39,22 +44,48 @@ public class Section : MonoBehaviour
         }
     }
 
-    // mvoe beginning object to given position, bringing all objects with
+    /// <summary>
+    /// Move the beginning of this section to the ending of the given section
+    /// </summary>
     public void AlignWithSection(Section section)
     {
+        // If the section rotations don't match, rotate this section to match the given section
+        if (section.EndRotation != this.BeginRotation)
+        {
+            // Does this section have a turn? 90 deg for right turn, -90 for left turn
+            int diff = this.EndRotation - this.BeginRotation;
+
+            // Determine how much to rotate this section
+            int rotate = section.EndRotation - this.BeginRotation;
+            this.transform.Rotate(0f, section.EndRotation, 0f);
+
+            // Set the section rotation values to match its real-world rotation
+            this.BeginRotation = section.EndRotation;
+            this.EndRotation = this.BeginRotation + diff;
+        }
+
+        // Move this section's beginning to the given section's ending
         Vector3 absoluteMovement = section.Ending.transform.position - this.Beginning.transform.position;
         this.transform.position += absoluteMovement;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Destroy this section and replace it with a random one after a predefined delay
+    /// </summary>
+    private IEnumerator ReplaceAfterDelayCoroutine()
     {
+        yield return new WaitForSeconds(2);
 
+        Destroy(this.gameObject);
+        LevelManager.Instance.CurrentLevel.GenerateNewSection();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Start replacement coroutine
+    /// </summary>
+    public void ReplaceAfterDelay()
     {
-
+        StartCoroutine(ReplaceAfterDelayCoroutine());
     }
+
 }

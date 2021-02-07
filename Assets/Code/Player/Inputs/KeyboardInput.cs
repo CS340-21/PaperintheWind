@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyboardInput : InputSource
 {
 
-    public override void ProcessInput()
+    public override void ProcessInputType()
     {
         PlayerMovement movement = PlayerManager.Instance.Controller.MovementController;
 

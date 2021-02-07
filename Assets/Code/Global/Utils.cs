@@ -5,11 +5,17 @@ using UnityEngine;
 public class Utils
 {
 
+    /// <summary>
+    /// Get a random element from the given list
+    /// </summary>
     public static T GetRandom<T>(T[] list)
     {
-        return list[Random.Range(0, list.Length - 1)];
+        return list[Random.Range(0, list.Length)];
     }
 
+    /// <summary>
+    /// Keep the given angle within the game's expected range.
+    /// </summary>
     public static int ResetAngle(int angle)
     {
         if (angle == 270)
@@ -20,11 +26,6 @@ public class Utils
             return 0;
         else
             return angle;
-    }
-
-    public static bool InRange(float num, float target, float range)
-    {
-        return Mathf.Abs(num - target) < range;
     }
 
 }

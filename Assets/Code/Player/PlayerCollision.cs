@@ -5,12 +5,6 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("collide with obstacle " + other.gameObject.name);
-        PlayerManager.Instance.Controller.Kill();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         PlayerController controller = PlayerManager.Instance.Controller;
@@ -23,9 +17,16 @@ public class PlayerCollision : MonoBehaviour
                 return;
 
             case "section_begin":
-                GameObject oldSection = controller.CurrentSection.gameObject;
+                controller.CurrentSection.ReplaceAfterDelay();
                 controller.CurrentSection = other.transform.parent.parent.GetComponent<Section>();
-                Destroy(oldSection);
+                return;
+
+            case "section_end":
+                return;
+
+            default:
+                Debug.Log("ran into " + other.name);
+                PlayerManager.Instance.Controller.Kill();
                 return;
         }
     }

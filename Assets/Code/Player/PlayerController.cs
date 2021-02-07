@@ -12,12 +12,33 @@ public class PlayerController : MonoBehaviour
 
     public Section CurrentSection;
 
+    public float DeathTime = 0f;
+
     public void Kill()
     {
-        CameraAnimation.SetTrigger("Death");
         Time.timeScale = 0f;
-        MovementController.Speed = 0f;
-        MovementController.FlipSpeed = 0f;
+        this.DeathTime = Time.unscaledTime;
+        CameraAnimation.SetBool("Dead", true);
+        PaperAnimation.SetBool("Dead", true);
+    }
+
+    public void Revive()
+    {
+        CameraAnimation.SetBool("Dead", false);
+        PaperAnimation.SetBool("Dead", false);
+        StartCoroutine(ResetRotationAnimation());
+
+        MovementController.Position = (1, 1);
+        MovementController.Rotation = 0;
+        Time.timeScale = 1f;
+        this.DeathTime = 0f;
+    }
+
+    private IEnumerator ResetRotationAnimation()
+    {
+        PlayerAnimation.SetTrigger("ResetRotation");
+        yield return new WaitForSeconds(1);
+        PlayerAnimation.ResetTrigger("ResetRotation");
     }
 
     public void Teleport(Transform newTransform)
@@ -43,17 +64,5 @@ public class PlayerController : MonoBehaviour
     public void TriggerAnimation(string triggerName)
     {
         PaperAnimation.SetTrigger(triggerName);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
