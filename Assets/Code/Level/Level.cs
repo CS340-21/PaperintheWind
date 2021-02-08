@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +13,12 @@ public class Level : MonoBehaviour
 
     private PlayerController PlayerController { get { return PlayerManager.Instance.Controller; } }
 
+    private void Awake()
+    {
+        if (Sections.Length == 0)
+            throw new Exception("level is missing sections");
+    }
+
     /// <summary>
     /// Choose a random section and attach it to the end of the most recently created section.
     /// </summary>
@@ -20,7 +26,7 @@ public class Level : MonoBehaviour
     {
         GameObject copy = GameObject.Instantiate(Utils.GetRandom(Sections).gameObject);
         Section newSection = copy.GetComponent<Section>();
-        newSection.ID = Random.Range(1, 1000000);
+        newSection.ID = UnityEngine.Random.Range(1, 1000000);
 
         if (LastCreatedSection != null)
             newSection.AlignWithSection(LastCreatedSection);
@@ -31,6 +37,9 @@ public class Level : MonoBehaviour
         return newSection;
     }
 
+    /// <summary>
+    /// Generate the given number of sections
+    /// </summary>
     public Section GenerateMultipleSections(int num)
     {
         Section firstSection = null;
@@ -42,14 +51,20 @@ public class Level : MonoBehaviour
         return firstSection;
     }
 
+    /// <summary>
+    /// Begin this level by generating sections and moving the player to the spawn
+    /// </summary>
     public void BeginLevel()
     {
         Section firstSection = this.GenerateMultipleSections(Constants.TotalSpawnedSections);
         PlayerController.CurrentSection = firstSection;
 
-        PlayerController.Teleport(firstSection.Spawn.transform);
+        PlayerController.Teleport(firstSection.Spawn.transform.position);
     }
 
+    /// <summary>
+    /// Destroy old sections and generate new ones
+    /// </summary>
     public void RestartLevel()
     {
         foreach (Section s in ActiveSections)

@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     // The player's left and right movement speed
     public float FlipSpeed = 5f;
 
+    /// <summary>
+    /// A tuple of the player's 2D position in the predefined grid of movements
+    /// </summary>
+    public (int, int) Position = (1, 1);
+
     /**
      * Default (1,1):       Right (1, 2):       Upper Right (0, 2):
      * |0|0|0|              |0|0|0|             |0|0|x|
@@ -26,12 +31,7 @@ public class PlayerMovement : MonoBehaviour
      */
 
     /// <summary>
-    /// A tuple of the player's position in the predefined grid of movements
-    /// </summary>
-    public (int, int) Position = (1, 1);
-
-    /// <summary>
-    /// The player's directional heading (0 is forward, 90 is right, -90 is left)
+    /// The player's heading (0 is forward, 90 is right, -90 is left)
     /// </summary>
     public int Rotation = 0;
 
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public string TurnPossibility = null;
 
     /// <summary>
-    /// Return the 3D position of the cell using the player's position tuple
+    /// Return the full location of the 2D grid cell in the 3D space
     /// </summary>
     private Vector3 GetChosen3DVector()
     {
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Translate the player's simplified coordinates into the 3D space
+    /// Translate the player's 2D grid coordinates into the local 3D space
     /// </summary>
     private Vector3 GetChosen2DVector(Vector3 cell)
     {
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Update the player's position grid based on the given direction
+    /// Update the player's position grid based on the given direction and play the appropriate animation
     /// </summary>
     public void MoveDirection(string dir)
     {
@@ -89,14 +89,14 @@ public class PlayerMovement : MonoBehaviour
                 if (Position.Item1 >= 2) break;
 
                 Position.Item1++;
-                controller.TriggerAnimation("Flip Down");
+                controller.TriggerPaperAnimation("Flip Down");
                 break;
 
             case "up":
                 if (Position.Item1 <= 0) break;
 
                 Position.Item1--;
-                controller.TriggerAnimation("Flip Up");
+                controller.TriggerPaperAnimation("Flip Up");
                 break;
 
             case "right":
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Position.Item2 >= 2) break;
 
                 Position.Item2++;
-                controller.TriggerAnimation("Flip Right");
+                controller.TriggerPaperAnimation("Flip Right");
                 break;
 
             case "left":
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Position.Item2 <= 0) break;
 
                 Position.Item2--;
-                controller.TriggerAnimation("Flip Left");
+                controller.TriggerPaperAnimation("Flip Left");
                 break;
         }
     }
@@ -138,12 +138,12 @@ public class PlayerMovement : MonoBehaviour
         if (dir == "right")
         {
             Rotation = Utils.ResetAngle(Rotation + 90);
-            PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
+            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Right");
         }
         else if (dir == "left")
         {
             Rotation = Utils.ResetAngle(Rotation - 90);
-            PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
+            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Left");
         }
 
         this.PlayRotateAnimation(dir);

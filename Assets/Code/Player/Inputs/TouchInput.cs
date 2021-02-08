@@ -5,22 +5,24 @@ using UnityEngine;
 public class TouchInput : InputSource
 {
 
-    private float SwipeThreshold = 20f;
+    // How many pixels the finger must move to be a swipe
+    private float SwipeThreshold = 75f;
 
+    // How long to wait (in seconds) between detecting swipes
     private float SwipeCooldown = 0.15f;
 
+    // Time of the last swipe
     private float LastSwipeTime = 0f;
 
+    // Location on screen where the player has started a touch
     private Vector2 FingerDown;
 
+    // Location on screen where the player has ended a touch
     private Vector2 FingerUp;
-
-    private float VerticleMovement { get { return Mathf.Abs(FingerDown.y - FingerUp.y); } }
-
-    private float HorizontalMovement { get { return Mathf.Abs(FingerDown.x - FingerUp.x); } }
 
     public override void ProcessInputType()
     {
+        // Wait for the specified amount of time between swipes
         if (Time.time - LastSwipeTime < SwipeCooldown) return;
 
         foreach (Touch touch in Input.touches)
@@ -42,39 +44,34 @@ public class TouchInput : InputSource
 
     private void CheckSwipeDirection()
     {
-        PlayerMovement movement = PlayerManager.Instance.Controller.MovementController;
+        Vector2 SwipeDelta = FingerUp - FingerDown;
 
-        //Check if Vertical swipe
-        if (VerticleMovement > SwipeThreshold && VerticleMovement > HorizontalMovement)
+        // Left/right
+        if (SwipeDelta.x > SwipeThreshold)
         {
-            if (FingerDown.y - FingerUp.y > 0)
-            {
-                movement.MoveDirection("up");
-                LastSwipeTime = Time.time;
-            }
-            else if (FingerDown.y - FingerUp.y < 0)
-            {
-                movement.MoveDirection("down");
-                LastSwipeTime = Time.time;
-            }
-            FingerUp = FingerDown;
+            this.PerformSwipe("left");
+        }
+        else if (SwipeDelta.x < -SwipeThreshold)
+        {
+            this.PerformSwipe("right");
         }
 
-        //Check if Horizontal swipe
-        else if (HorizontalMovement > SwipeThreshold && HorizontalMovement > VerticleMovement)
+        // Up/down
+        if (SwipeDelta.y > SwipeThreshold)
         {
-            if (FingerDown.x - FingerUp.x > 0)
-            {
-                movement.MoveDirection("right");
-                LastSwipeTime = Time.time;
-            }
-            else if (FingerDown.x - FingerUp.x < 0)
-            {
-                movement.MoveDirection("left");
-                LastSwipeTime = Time.time;
-            }
-            FingerUp = FingerDown;
+            this.PerformSwipe("down");
         }
+        else if (SwipeDelta.y < -SwipeThreshold)
+        {
+            this.PerformSwipe("up");
+        }
+    }
+
+    private void PerformSwipe(string dir)
+    {
+        PlayerManager.Instance.Controller.MovementController.MoveDirection(dir);
+        LastSwipeTime = Time.time;
+        FingerUp = FingerDown;
     }
 
 }
