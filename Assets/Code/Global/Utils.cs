@@ -6,6 +6,19 @@ public class Utils
 {
 
     /// <summary>
+    /// Forcefully exit the game with the given error message
+    /// </summary>
+    public static void Crash(object error)
+    {
+        Debug.LogError(error);
+
+        if (Application.isEditor)
+            UnityEditor.EditorApplication.isPlaying = false;
+        else
+            Application.Quit();
+    }
+
+    /// <summary>
     /// Get a random element from the given list
     /// </summary>
     public static T GetRandom<T>(T[] list)

@@ -11,9 +11,12 @@ public class PlayerCollision : MonoBehaviour
 
         switch (other.gameObject.tag)
         {
-            case "turn":
-                string dir = other.gameObject.name.Split(' ')[0].ToLower();
-                controller.SetTurnPossibility(dir);
+            case "right_turn":
+                controller.SetTurnPossibility("right");
+                return;
+
+            case "left_turn":
+                controller.SetTurnPossibility("left");
                 return;
 
             case "section_begin":

@@ -13,12 +13,10 @@ TagManager:
   - (2,0)
   - (2,1)
   - (2,2)
-  - turn
-  - preturn
-  - postturn
   - section_end
   - section_begin
-  - section_spawn
+  - left_turn
+  - right_turn
   layers:
   - Default
   - TransparentFX

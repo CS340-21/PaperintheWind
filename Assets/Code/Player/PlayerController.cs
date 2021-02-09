@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         CameraAnimation.SetBool("Dead", false);
         StartCoroutine(ResetAnimations());
 
+        MovementController.TurnPossibility = null;
         MovementController.Position = (1, 1);
         MovementController.Rotation = 0;
         Time.timeScale = 1f;

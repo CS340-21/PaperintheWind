@@ -16,7 +16,10 @@ public class Level : MonoBehaviour
     private void Awake()
     {
         if (Sections.Length == 0)
-            throw new Exception("level is missing sections");
+            Utils.Crash(transform.name + " has no sections attached to script");
+
+        foreach (Section s in Sections)
+            s.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -25,13 +28,15 @@ public class Level : MonoBehaviour
     public Section GenerateNewSection()
     {
         GameObject copy = GameObject.Instantiate(Utils.GetRandom(Sections).gameObject);
+        copy.gameObject.SetActive(true);
+
         Section newSection = copy.GetComponent<Section>();
         newSection.ID = UnityEngine.Random.Range(1, 1000000);
 
         if (LastCreatedSection != null)
             newSection.AlignWithSection(LastCreatedSection);
         else
-            copy.transform.position = Constants.WorldStart;
+            copy.transform.position = Vector3.zero;
 
         ActiveSections.Add(newSection);
         return newSection;

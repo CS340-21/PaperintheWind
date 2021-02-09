@@ -88,4 +88,16 @@ public class Section : MonoBehaviour
         StartCoroutine(ReplaceAfterDelayCoroutine());
     }
 
+    private void Awake()
+    {
+        if (this.transform.Find("Spawn") == null)
+            Utils.Crash(transform.name + " has no Spawn object");
+        else if (this.transform.Find("Signals/Begin") == null)
+            Utils.Crash(transform.name + " has no Signals/Begin object");
+        else if (this.transform.Find("Signals/End") == null)
+            Utils.Crash(transform.name + " has no Signals/End object");
+        else if (this.transform.Find("MoveGrid/PreTurn") == null)
+            Utils.Crash(transform.name + " has no MoveGrid/PreTurn object");
+    }
+
 }
