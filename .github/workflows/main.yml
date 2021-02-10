@@ -1,4 +1,4 @@
-name: iOS Unity Build
+name: iOS Build
 
 on:
   pull_request:
