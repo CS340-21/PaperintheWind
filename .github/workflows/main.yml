@@ -1,10 +1,9 @@
 name: Unity Actions
 
 on:
-  push:
+  pull_request:
     branches: 
       - develop
-      - main
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
