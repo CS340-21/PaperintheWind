@@ -7,21 +7,40 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "turn")
-        {
-            string dir = other.gameObject.name.Split(' ')[0].ToLower();
-            PlayerManager.Instance.Controller.SetTurnPossibility(dir);
-            return;
-        }
+        PlayerController controller = PlayerManager.Instance.Controller;
 
-        Debug.Log("collide with obstacle " + other.gameObject.name);
+        switch (other.gameObject.tag)
+        {
+            case "right_turn":
+                controller.SetTurnPossibility("right");
+                return;
+
+            case "left_turn":
+                controller.SetTurnPossibility("left");
+                return;
+
+            case "section_begin":
+                controller.CurrentSection.ReplaceAfterDelay();
+                controller.CurrentSection = other.transform.parent.parent.GetComponent<Section>();
+                return;
+
+            case "section_end":
+                return;
+
+            default:
+                Debug.Log("ran into " + other.name);
+                PlayerManager.Instance.Controller.Kill();
+                return;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "turn")
+        switch (other.gameObject.tag)
         {
-            PlayerManager.Instance.Controller.SetTurnPossibility(null);
+            case "turn":
+                PlayerManager.Instance.Controller.SetTurnPossibility(null);
+                return;
         }
     }
 

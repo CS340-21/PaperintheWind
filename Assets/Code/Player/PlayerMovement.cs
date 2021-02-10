@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -11,9 +10,18 @@ public class PlayerMovement : MonoBehaviour
     // The parent player object
     private GameObject Player { get { return gameObject; } }
 
+    private InputSource Inputs;
+
+    // The player's forward movement speed
     public float Speed = 5f;
 
+    // The player's left and right movement speed
     public float FlipSpeed = 5f;
+
+    /// <summary>
+    /// A tuple of the player's 2D position in the predefined grid of movements
+    /// </summary>
+    public (int, int) Position = (1, 1);
 
     /**
      * Default (1,1):       Right (1, 2):       Upper Right (0, 2):
@@ -23,14 +31,8 @@ public class PlayerMovement : MonoBehaviour
      */
 
     /// <summary>
-    /// A tuple of the player's position in the predefined grid of movements
+    /// The player's heading (0 is forward, 90 is right, -90 is left)
     /// </summary>
-    private (int, int) Position = (1, 1);
-
-    /// <summary>
-    /// The player's directional heading (0 is forward, 90 is right, -90 is left)
-    /// </summary>
-    [HideInInspector]
     public int Rotation = 0;
 
     /// <summary>
@@ -40,20 +42,20 @@ public class PlayerMovement : MonoBehaviour
     public string TurnPossibility = null;
 
     /// <summary>
-    /// Return the 3D position of the cell using the player's position tuple
+    /// Return the full location of the 2D grid cell in the 3D space
     /// </summary>
     private Vector3 GetChosen3DVector()
     {
         string cellTag = string.Format("({0},{1})", Position.Item1, Position.Item2);
 
-        GameObject parent = GameObject.FindGameObjectWithTag("preturn");
-        if (parent == null) parent = GameObject.FindGameObjectWithTag("postturn");
+        GameObject parent = PlayerManager.Instance.Controller.CurrentSection.PreTurn;
+        if (parent == null) parent = PlayerManager.Instance.Controller.CurrentSection.PostTurn;
 
         return parent.transform.Find(cellTag).transform.position;
     }
 
     /// <summary>
-    /// Translate the player's simplified coordinates into the 3D space
+    /// Translate the player's 2D grid coordinates into the local 3D space
     /// </summary>
     private Vector3 GetChosen2DVector(Vector3 cell)
     {
@@ -70,73 +72,55 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("player moving in invalid direction?");
-            return new Vector3(cell.x, cell.y, Player.transform.position.z);
+            throw new Exception("player moving in invalid direction " + rotation);
         }
     }
 
     /// <summary>
-    /// Listen for the currently selected inputs and move accordingly
+    /// Update the player's position grid based on the given direction and play the appropriate animation
     /// </summary>
-    private void MoveWithInputs()
+    public void MoveDirection(string dir)
     {
-        if (Input.GetKeyDown("right")) MoveDirection("right");
-        if (Input.GetKeyDown("left")) MoveDirection("left");
-        if (Input.GetKeyDown("down")) MoveDirection("down");
-        if (Input.GetKeyDown("up")) MoveDirection("up");
-    }
+        PlayerController controller = PlayerManager.Instance.Controller;
 
-    /// <summary>
-    /// Update the player's position grid based on the given direction
-    /// </summary>
-    private void MoveDirection(string dir)
-    {
         switch (dir)
         {
             case "down":
-                if (Position.Item1 < 2)
-                {
-                    Position.Item1++;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Down");
-                }
+                if (Position.Item1 >= 2) break;
+
+                Position.Item1++;
+                controller.TriggerPaperAnimation("Flip Down");
                 break;
+
             case "up":
-                if (Position.Item1 > 0)
-                {
-                    Position.Item1--;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Up");
-                }
+                if (Position.Item1 <= 0) break;
+
+                Position.Item1--;
+                controller.TriggerPaperAnimation("Flip Up");
                 break;
+
             case "right":
                 if (TurnPossibility == "right")
                 {
                     TurnDirection("right");
                     break;
                 }
+                if (Position.Item2 >= 2) break;
 
-                if (Position.Item2 < 2)
-                {
-                    Position.Item2++;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
-                }
-
+                Position.Item2++;
+                controller.TriggerPaperAnimation("Flip Right");
                 break;
+
             case "left":
                 if (TurnPossibility == "left")
                 {
                     TurnDirection("left");
                     break;
                 }
+                if (Position.Item2 <= 0) break;
 
-                if (Position.Item2 > 0)
-                {
-                    Position.Item2--;
-                    PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
-                }
-
-                break;
-            default:
-                Debug.Log("called Move() with invalid direction");
+                Position.Item2--;
+                controller.TriggerPaperAnimation("Flip Left");
                 break;
         }
     }
@@ -146,20 +130,20 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void TurnDirection(string dir)
     {
-        if (GameObject.FindGameObjectWithTag("preturn") == null) return;
+        if (PlayerManager.Instance.Controller.CurrentSection.PreTurn == null) return;
+        Destroy(PlayerManager.Instance.Controller.CurrentSection.PreTurn);
 
-        Destroy(GameObject.FindGameObjectWithTag("preturn"));
         TurnPossibility = null;
 
         if (dir == "right")
         {
             Rotation = Utils.ResetAngle(Rotation + 90);
-            PlayerManager.Instance.Controller.TriggerAnimation("Flip Right");
+            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Right");
         }
         else if (dir == "left")
         {
             Rotation = Utils.ResetAngle(Rotation - 90);
-            PlayerManager.Instance.Controller.TriggerAnimation("Flip Left");
+            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Left");
         }
 
         this.PlayRotateAnimation(dir);
@@ -173,31 +157,48 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void PlayRotateAnimation(string dir)
     {
+        PlayerController controller = PlayerManager.Instance.Controller;
+
         switch (Rotation)
         {
             case 0:
                 if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Forward");
+                    controller.PlayParentAnimation("Rotate Left-Forward");
                 else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Forward");
-                break;
-            case 90:
-                if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Right");
-                else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Right");
-                break;
-            case 180:
-                if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Right-Back");
-                else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Left-Back");
+                    controller.PlayParentAnimation("Rotate Right-Forward");
                 break;
             case -90:
                 if (dir == "right")
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Back-Left");
+                    controller.PlayParentAnimation("Rotate Back-Left");
                 else
-                    PlayerManager.Instance.Controller.PlayParentAnimation("Rotate Forward-Left");
+                    controller.PlayParentAnimation("Rotate Forward-Left");
+                break;
+            case 90:
+                if (dir == "right")
+                    controller.PlayParentAnimation("Rotate Forward-Right");
+                else
+                    controller.PlayParentAnimation("Rotate Back-Right");
+                break;
+            case 180:
+                if (dir == "right")
+                    controller.PlayParentAnimation("Rotate Right-Back");
+                else
+                    controller.PlayParentAnimation("Rotate Left-Back");
+                break;
+        }
+    }
+
+    void Awake()
+    {
+        // Detect platform and change input source accordingly
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+            case RuntimePlatform.IPhonePlayer:
+                Inputs = new TouchInput();
+                break;
+            default:
+                Inputs = new KeyboardInput();
                 break;
         }
     }
@@ -205,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Check for new inputs every frame
-        MoveWithInputs();
+        Inputs.Process();
 
         Vector3 movementGridCell = this.GetChosen3DVector();
 

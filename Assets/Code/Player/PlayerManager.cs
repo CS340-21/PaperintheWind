@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -19,6 +18,9 @@ public class PlayerManager : MonoBehaviour
         {
             _instance = this;
         }
+
+        if (Controller == null)
+            throw new Exception("player manager is missing player controller");
     }
 
     public PlayerController Controller;
