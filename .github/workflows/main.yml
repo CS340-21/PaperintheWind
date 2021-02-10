@@ -1,4 +1,4 @@
-name: Unity Actions
+name: iOS Unity Build
 
 on:
   pull_request:
