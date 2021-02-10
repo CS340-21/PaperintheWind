@@ -1,7 +1,9 @@
 name: Unity Actions
 
 on:
-  pull_request: { branches: [develop] }
+  pull_request:
+    branches: 
+      - develop
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
