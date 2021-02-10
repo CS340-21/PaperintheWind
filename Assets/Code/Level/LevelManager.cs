@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -19,8 +18,16 @@ public class LevelManager : MonoBehaviour
         {
             _instance = this;
         }
+
+        if (Levels.Length == 0)
+            throw new Exception("level manager is missing levels");
+
+        CurrentLevel = Levels[0];
+        CurrentLevel.BeginLevel();
     }
 
     public Level[] Levels;
+
+    public Level CurrentLevel;
 
 }
