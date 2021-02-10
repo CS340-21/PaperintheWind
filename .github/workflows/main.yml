@@ -3,7 +3,7 @@ name: Unity Actions
 on:
   pull_request:
     branches: 
-      - develop
+      - master
   workflow_dispatch:
 
 env:
@@ -27,21 +27,21 @@ jobs:
           key: Library
 
       # Test
-      - name: Run tests
-        id: tests
-        uses: webbertakken/unity-test-runner@v2.0-alpha-2
-        with:
-          unityVersion: 2020.2.2f1
+      #- name: Run tests
+      #  id: tests
+      #  uses: webbertakken/unity-test-runner@v2.0-alpha-2
+      #  with:
+      #    unityVersion: 2020.2.3f1
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v1
-        with:
-          name: Test results
-          path: ${{ steps.tests.outputs.artifactsPath }}
+      #- name: Upload test results
+      #  uses: actions/upload-artifact@v1
+      #  with:
+      #    name: Test results
+      #    path: ${{ steps.tests.outputs.artifactsPath }}
 
       # Build
       - name: Build project
         uses: webbertakken/unity-builder@v2.0-alpha-6
         with:
-          unityVersion: 2020.2.2f1
+          unityVersion: 2020.2.3f1
           targetPlatform: iOS
