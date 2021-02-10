@@ -1,6 +1,6 @@
 <p align="center"><i>A mobile game by Greg Cantrall, Ryan Forsten, Joey Lemon, and Brandon Mingledorff</i></p>
 
-<p align="center"><img src="https://i.imgur.com/ydPoMC1.png" width="600" /></p>
+<p align="center"><img src="https://i.imgur.com/xnjWKBv.png" width="600" /></p>
 
 # Paper in the Wind
 
