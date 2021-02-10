@@ -1,0 +1,46 @@
+name: Unity Actions
+
+on:
+  pull_request:
+    branches: 
+      - develop
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library
+
+      # Test
+      - name: Run tests
+        id: tests
+        uses: webbertakken/unity-test-runner@v2.0-alpha-2
+        with:
+          unityVersion: 2020.2.2f1
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v1
+        with:
+          name: Test results
+          path: ${{ steps.tests.outputs.artifactsPath }}
+
+      # Build
+      - name: Build project
+        uses: webbertakken/unity-builder@v2.0-alpha-6
+        with:
+          unityVersion: 2020.2.2f1
+          targetPlatform: iOS
