@@ -52,12 +52,11 @@ public class Section : MonoBehaviour
         // If the section rotations don't match, rotate this section to match the given section
         if (section.EndRotation != this.BeginRotation)
         {
+            // Rotate this section
+            this.transform.Rotate(0f, section.EndRotation, 0f);
+
             // Does this section have a turn? 90 deg for right turn, -90 for left turn
             int diff = this.EndRotation - this.BeginRotation;
-
-            // Determine how much to rotate this section
-            int rotate = section.EndRotation - this.BeginRotation;
-            this.transform.Rotate(0f, section.EndRotation, 0f);
 
             // Set the section rotation values to match its real-world rotation
             this.BeginRotation = section.EndRotation;
@@ -76,8 +75,12 @@ public class Section : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        Destroy(this.gameObject);
-        LevelManager.Instance.CurrentLevel.GenerateNewSection();
+        // The player may have died and quit the level in the last 2 seconds
+        if (LevelManager.Instance.CurrentLevel != null)
+        {
+            LevelManager.Instance.CurrentLevel.DestroySection(this);
+            LevelManager.Instance.CurrentLevel.GenerateNewSection();
+        }
     }
 
     /// <summary>
