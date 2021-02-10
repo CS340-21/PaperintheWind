@@ -1,8 +1,12 @@
-<p align="center"><i>A mobile game by Greg Cantrall, Ryan Forsten, Joey Lemon, and Brandon Mingledorff</i></p>
+# Paper in the Wind
+
+![iOS Build](https://github.com/CS340-21/PaperintheWind/workflows/iOS%20Build/badge.svg)
+
+A mobile game by Greg Cantrall, Ryan Forsten, Joey Lemon, and Brandon Mingledorff
+
+## Introduction
 
 <p align="center"><img src="https://i.imgur.com/xnjWKBv.png" width="600" /></p>
-
-# Paper in the Wind
 
 You're a piece of paper, flying through different environments and avoiding obstacles along the way. 
 The goal of the game is to make it as far as possible in the level without dying—you will earn points for every meter travelled.
