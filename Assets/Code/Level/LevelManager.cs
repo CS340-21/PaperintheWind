@@ -8,19 +8,18 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager Instance { get { return _instance; } }
 
-    private void Awake()
+    public void InitializeSingleton()
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
+        if (_instance == null)
             _instance = this;
-        }
 
         if (Levels.Length == 0)
             Utils.Crash("level manager is missing levels");
+    }
+
+    private void Awake()
+    {
+        this.InitializeSingleton();
 
         CurrentLevel = Levels[0];
         CurrentLevel.BeginLevel();

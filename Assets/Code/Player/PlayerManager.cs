@@ -8,19 +8,18 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager Instance { get { return _instance; } }
 
-    private void Awake()
+    public void InitializeSingleton()
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
+        if (_instance == null)
             _instance = this;
-        }
 
         if (Controller == null)
             Utils.Crash("player manager is missing player controller");
+    }
+
+    private void Awake()
+    {
+        this.InitializeSingleton();
     }
 
     public PlayerController Controller;

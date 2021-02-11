@@ -8,16 +8,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
+    public void InitializeSingleton()
+    {
+        if (_instance == null)
+            _instance = this;
+    }
+
     private void Awake()
     {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
+        this.InitializeSingleton();
     }
 
 }

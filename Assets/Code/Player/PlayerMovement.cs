@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Return the full location of the 2D grid cell in the 3D space
     /// </summary>
-    private Vector3 GetChosen3DVector()
+    public Vector3 GetChosen3DVector()
     {
         string cellTag = string.Format("({0},{1})", Position.Item1, Position.Item2);
 
@@ -57,9 +57,8 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Translate the player's 2D grid coordinates into the local 3D space
     /// </summary>
-    private Vector3 GetChosen2DVector(Vector3 cell)
+    public Vector3 GetChosen2DVector(Vector3 cell)
     {
-        float yAngle = Player.transform.rotation.eulerAngles.y;
         int rotation = Utils.ResetAngle(Rotation);
 
         if (rotation == 0 || rotation == 180)
@@ -122,13 +121,16 @@ public class PlayerMovement : MonoBehaviour
                 Position.Item2--;
                 controller.TriggerPaperAnimation("Flip Left");
                 break;
+
+            default:
+                throw new Exception("invalid direction given: " + dir);
         }
     }
 
     /// <summary>
     /// Update the player's rotation to move in the new direction
     /// </summary>
-    private void TurnDirection(string dir)
+    public void TurnDirection(string dir)
     {
         if (PlayerManager.Instance.Controller.CurrentSection.PreTurn == null) return;
         Destroy(PlayerManager.Instance.Controller.CurrentSection.PreTurn);
@@ -155,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Play the appropriate rotation animation based on the old and new directions
     /// </summary>
-    private void PlayRotateAnimation(string dir)
+    public void PlayRotateAnimation(string dir)
     {
         PlayerController controller = PlayerManager.Instance.Controller;
 
@@ -185,6 +187,8 @@ public class PlayerMovement : MonoBehaviour
                 else
                     controller.PlayParentAnimation("Rotate Left-Back");
                 break;
+            default:
+                throw new Exception("player rotation is invalid value: " + Rotation);
         }
     }
 
