@@ -17,16 +17,16 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         if (MovementController == null)
-            throw new Exception("player controller missing MovementController");
+            Utils.Crash("player controller missing MovementController");
 
         if (PaperAnimation == null)
-            throw new Exception("player controller missing PaperAnimation");
+            Utils.Crash("player controller missing PaperAnimation");
 
         if (PlayerAnimation == null)
-            throw new Exception("player controller missing PlayerAnimation");
+            Utils.Crash("player controller missing PlayerAnimation");
 
         if (CameraAnimation == null)
-            throw new Exception("player controller missing CameraAnimation");
+            Utils.Crash("player controller missing CameraAnimation");
     }
 
     /// <summary>

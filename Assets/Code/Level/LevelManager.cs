@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
         }
 
         if (Levels.Length == 0)
-            throw new Exception("level manager is missing levels");
+            Utils.Crash("level manager is missing levels");
 
         CurrentLevel = Levels[0];
         CurrentLevel.BeginLevel();

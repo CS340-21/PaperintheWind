@@ -24,7 +24,7 @@ public class ObstacleRow : MonoBehaviour
     void Start()
     {
         if (ParentSection == null)
-            throw new Exception("obstacle row has no parent section");
+            Utils.Crash("obstacle row has no parent section");
 
         if (ParentSection.ID > 0)
             Destroy(Utils.GetRandom(this.GetChildren()));

@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         if (Controller == null)
-            throw new Exception("player manager is missing player controller");
+            Utils.Crash("player manager is missing player controller");
     }
 
     public PlayerController Controller;
