@@ -67,9 +67,9 @@ The unit tests will be written for each major component shown above. They will t
 ## IV. Team
 
 Our team is generally new to both Unity and C#. Only one team member has built a similar game with the same technology, while the rest of the team will be learning a completely new workflow. We have chosen to define set roles for each member of the team, which we will maintain throughout the development process. We all intend to contribute to most aspects of the project; however, below are the more granular roles that should divide the project scope into manageable components:
--	Joey Lemon: project manager
+-	Joey Lemon: project manager, base project structure to get team rolling
 -	Ryan Forsten: level design
--	Brandon Mingledorff: game logic
+-	Brandon Mingledorff: user experience
 -	Greg Cantrall: game logic
 
 ## V. Project Management
