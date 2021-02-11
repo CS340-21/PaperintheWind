@@ -76,17 +76,13 @@ Our team is generally new to both Unity and C#. Only one team member has built a
 
 The product defined in this document is feasible to be completed in a semester-long schedule. Biweekly team meetings will occur on Discord to keep everyone on track and to reevaluate our scope as time goes on. Below is a tentative schedule that should allow us to end with a finished product:
 
-|Date|Activity|Sprint Goals|
+|Date|Activity|Sprint Goal|
 |----|--------|------------|
-|Thursday, Feb. 18| Begin work on product: commit skeleton structure to repository to expand upon.| Begin first level, finish basic graphics, finish movement system
-|Friday, Feb. 26| Begin second sprint| Expand first level, begin point system, add obstacles and animations|
-|Thursday, Mar. 4| Submit iteration 1 status report| ...|
-|Friday, Mar. 12| Begin third sprint| Begin second level, begin menu system, begin upgrade system|
-|Thursday, Mar. 18| Submit iteration 2 status report| ...|
-|Friday, Mar. 26| Begin fourth sprint| Finish all core functionality|
-|Thursday, Apr. 1| Submit iteration 3 status report| ...|
-|Friday, Apr. 9| Begin final sprint| Test product, fix bugs, tweak to our liking|
-|Thursday, Apr. 15| Submit project report and present final product| ...|
+|Thursday, Feb. 18| Submit project proposal| Begin first level, finish basic graphics, movement system, and level generation
+|Thursday, Mar. 4| Submit iteration 1 status report| Complete point and menu system, enhance first level|
+|Thursday, Mar. 18| Submit iteration 2 status report| Complete leaderboard, finalize entire first level|
+|Thursday, Apr. 1| Submit iteration 3 status report| Complete upgrade system with unlocks|
+|Thursday, Apr. 15| Submit project report and present final product| Complete second level, refinement period|
 
 The only constraint to publishing our finished product is the hefty review process by Apple when applying to the App Store. Other than that, there are no other regulatory or legal constraints, nor are there any immediately obvious ethical or social concerns. We will have access to everything required to start and finish the project defined in this document. An additional step we could possibly take to finish with a more professional product is to purchase Unity Pro to remove the Unity logo and entitle us to earning more than $200,000 in revenue if the game becomes successful. By following the schedule outlined previously, we should end with a viable product that can be played and enjoyed. Therefore, even if we end up descoping, we will still have a product that is functional.
 
