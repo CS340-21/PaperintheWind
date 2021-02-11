@@ -76,7 +76,7 @@ Our team is generally new to both Unity and C#. Only one team member has built a
 
 The product defined in this document is feasible to be completed in a semester-long schedule. Biweekly team meetings will occur on Discord to keep everyone on track and to reevaluate our scope as time goes on. Below is a tentative schedule that should allow us to end with a finished product:
 
-|Date|Activity|Sprint Goal|
+|Date|Class Submission|Sprint Goal|
 |----|--------|------------|
 |Thursday, Feb. 18| Submit project proposal| Begin first level, finish basic graphics, movement system, and level generation
 |Thursday, Mar. 4| Submit iteration 1 status report| Complete point and menu system, enhance first level|
