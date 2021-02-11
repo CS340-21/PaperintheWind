@@ -1,6 +1,7 @@
 # Paper in the Wind
 
 ![iOS Build](https://github.com/CS340-21/PaperintheWind/workflows/iOS%20Build/badge.svg)
+![iOS Build](https://github.com/CS340-21/PaperintheWind/workflows/Tests/badge.svg)
 
 A mobile game by Greg Cantrall, Ryan Forsten, Joey Lemon, and Brandon Mingledorff
 
