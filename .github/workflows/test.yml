@@ -14,6 +14,18 @@ jobs:
     name: Test project
     runs-on: ubuntu-latest
     steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@main
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@main
+        with:
+          path: Library
+          key: Library
+
       # Test
       - name: Run tests
         id: tests
