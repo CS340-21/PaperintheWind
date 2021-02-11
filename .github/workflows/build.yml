@@ -26,19 +26,6 @@ jobs:
           path: Library
           key: Library
 
-      # Test
-      #- name: Run tests
-      #  id: tests
-      #  uses: webbertakken/unity-test-runner@v2.0-alpha-2
-      #  with:
-      #    unityVersion: 2020.2.3f1
-
-      #- name: Upload test results
-      #  uses: actions/upload-artifact@v1
-      #  with:
-      #    name: Test results
-      #    path: ${{ steps.tests.outputs.artifactsPath }}
-
       # Build
       - name: Build project
         uses: webbertakken/unity-builder@v2.0-alpha-6

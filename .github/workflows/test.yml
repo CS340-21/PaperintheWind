@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: 
+      - master
+  workflow_dispatch:
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  test:
+    name: Test project
+    runs-on: ubuntu-latest
+    steps:
+      # Test
+      - name: Run tests
+        id: tests
+        uses: webbertakken/unity-test-runner@v2.0-alpha-2
+        with:
+          unityVersion: 2020.2.3f1
+          testMode: editmode
+
+      # Store results
+      - name: Upload test results
+        uses: actions/upload-artifact@main
+        with:
+         name: Test results
+         path: ${{ steps.tests.outputs.artifactsPath }}
+
+      # Cache
+      - uses: actions/cache@main
+        with:
+          path: Library
+          key: Library
