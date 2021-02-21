@@ -6,7 +6,7 @@ public class TouchInput : InputSource
 {
 
     // How many pixels the finger must move to be a swipe
-    private float SwipeThreshold = 75f;
+    private float SwipeThreshold = 45f;
 
     // How long to wait (in seconds) between detecting swipes
     private float SwipeCooldown = 0.15f;
