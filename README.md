@@ -1,6 +1,6 @@
 # Paper in the Wind
 
-![iOS Build Status](https://img.shields.io/github/workflow/status/CS340-21/PaperintheWind/iOS%20Build?label=iOS%20Build&logo=github)
+![iOS Build Status](https://img.shields.io/github/workflow/status/CS340-21/PaperintheWind/Build?label=Build&logo=github)
 ![Test Status](https://img.shields.io/github/workflow/status/CS340-21/PaperintheWind/Tests?label=Tests&logo=github)
 ![Open Sprint Task Count](https://img.shields.io/github/issues-raw/CS340-21/PaperintheWind?color=24a0ed&label=Open%20Sprint%20Tasks&logo=github)
 ![Sprint Count](https://img.shields.io/github/milestones/open/CS340-21/PaperintheWind?color=24a0ed&label=Remaining%20Sprints&logo=github)
