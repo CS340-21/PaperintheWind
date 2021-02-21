@@ -7,7 +7,7 @@ public class KeyboardInput : InputSource
 
     public override void ProcessInputType()
     {
-        PlayerMovement movement = PlayerManager.Instance.Controller.MovementController;
+        PlayerMovement movement = controller.MovementController;
 
         if (Input.GetKeyDown("up") || Input.GetKeyDown("w")) movement.MoveDirection("up");
         if (Input.GetKeyDown("left") || Input.GetKeyDown("a")) movement.MoveDirection("left");

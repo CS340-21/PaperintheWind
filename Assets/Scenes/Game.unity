@@ -171,7 +171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1114525698681854, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4717767209960708, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_RootOrder
@@ -228,7 +228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (4)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -285,6 +285,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
   m_PrefabInstance: {fileID: 23467873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &29244268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1788866599303790, guid: bf5f0313051a91c429401d2f0e008f48, type: 3}
+  m_PrefabInstance: {fileID: 1625834120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &29244269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29244268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.4399999, z: 0.5}
+  m_Center: {x: -0.0000019073486, y: 0.71999997, z: -0.0000019073486}
 --- !u!1 &33754180
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1657282623235668, guid: 6e0afc152561505409eeec22854329d5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B_Frame_B
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4688248643821226, guid: 6e0afc152561505409eeec22854329d5, type: 3}
       propertyPath: m_RootOrder
@@ -995,7 +1013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644480926504366, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_Name
-      value: Shelving_5Tier_White (1)
+      value: Shelf
       objectReference: {fileID: 0}
     - target: {fileID: 4985506273562842, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_RootOrder
@@ -1142,6 +1160,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4917152870275608, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
   m_PrefabInstance: {fileID: 374220856}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &77560314
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
+        m_Scale: {x: 2.5, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
+        m_Scale: {x: 1.9618518, y: 5.8}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &78085357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1151,7 +1248,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (9)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -1222,7 +1319,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1770293122699352, guid: f6911a4b6200b7f45afe192ecda79662, type: 3}
       propertyPath: m_Name
-      value: Tray_Stack
+      value: Tray
       objectReference: {fileID: 0}
     - target: {fileID: 4228056571189576, guid: f6911a4b6200b7f45afe192ecda79662, type: 3}
       propertyPath: m_RootOrder
@@ -1296,7 +1393,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1781551374601488, guid: 4056e11a34922e545bc6b3b363998cb5, type: 3}
       propertyPath: m_Name
-      value: Drawer_OfficeDesk4_Top
+      value: Drawer
       objectReference: {fileID: 0}
     - target: {fileID: 4040332547549022, guid: 4056e11a34922e545bc6b3b363998cb5, type: 3}
       propertyPath: m_RootOrder
@@ -1358,7 +1455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -1641,7 +1738,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1808766274993834, guid: 93d34e1048da0f848ba723fa12963365, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Turquoise
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4931755048832710, guid: 93d34e1048da0f848ba723fa12963365, type: 3}
       propertyPath: m_RootOrder
@@ -1715,7 +1812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1682688738705030, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_Name
-      value: Wall_Divider_Short_A
+      value: Divider
       objectReference: {fileID: 0}
     - target: {fileID: 4371264251558810, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_RootOrder
@@ -1937,6 +2034,7 @@ GameObject:
   - component: {fileID: 154113773}
   - component: {fileID: 154113774}
   - component: {fileID: 154113775}
+  - component: {fileID: 154113776}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2025,6 +2123,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cf723640e5f9449a6e17b5e9147599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: e60bbf002c6fa5343899cabc638416e2, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+--- !u!114 &154113776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154113770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d0bf565cbafe34d817188955f2e00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointsEarned: 0
 --- !u!1001 &160035220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2034,7 +2212,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1331707018736974, guid: b261f5316b925184ea5ee3155bd868e1, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Violet
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4644760339231400, guid: b261f5316b925184ea5ee3155bd868e1, type: 3}
       propertyPath: m_RootOrder
@@ -2189,7 +2367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -2372,7 +2550,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -2446,7 +2624,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (10)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -2797,7 +2975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1364315104730290, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_Name
-      value: Dining_Canteen_Table (2)
+      value: Table
       objectReference: {fileID: 0}
     - target: {fileID: 4789048282950122, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_RootOrder
@@ -2871,7 +3049,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1036441565964026, guid: 20c579d96c7c10f49b14b969e1024726, type: 3}
       propertyPath: m_Name
-      value: FridgeFreezer
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 4793694960592754, guid: 20c579d96c7c10f49b14b969e1024726, type: 3}
       propertyPath: m_RootOrder
@@ -2981,7 +3159,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1832654418914586, guid: f212a40ad13e5e74fbe44cb06ca5d3f8, type: 3}
       propertyPath: m_Name
-      value: Desk_Corner_Booth_D_Open_Brown
+      value: Desk
       objectReference: {fileID: 0}
     - target: {fileID: 4440752820270084, guid: f212a40ad13e5e74fbe44cb06ca5d3f8, type: 3}
       propertyPath: m_RootOrder
@@ -3043,7 +3221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1451693412413204, guid: baf6a6054ad95e643bb77b27da6c2428, type: 3}
       propertyPath: m_Name
-      value: Wall_Divider_Pillar
+      value: Pillar
       objectReference: {fileID: 0}
     - target: {fileID: 4436707954246248, guid: baf6a6054ad95e643bb77b27da6c2428, type: 3}
       propertyPath: m_RootOrder
@@ -3249,7 +3427,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1670033011509986, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_Name
-      value: ProjectorScreen (2)
+      value: Projector Screen
       objectReference: {fileID: 0}
     - target: {fileID: 4166240587004202, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_RootOrder
@@ -3324,7 +3502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1518565650833556, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_80cm
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4049896237817634, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_RootOrder
@@ -3582,7 +3760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (5)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -3653,7 +3831,7 @@ GameObject:
   - component: {fileID: 318605242}
   - component: {fileID: 318605245}
   m_Layer: 0
-  m_Name: Floor (1)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3705,7 +3883,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 337617979}
+  - {fileID: 1375950581}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3757,7 +3935,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1922241286041796, guid: 4d1c84dfd84655e429877e320eb2f8bb, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_A
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4625935247113540, guid: 4d1c84dfd84655e429877e320eb2f8bb, type: 3}
       propertyPath: m_RootOrder
@@ -3810,85 +3988,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4625935247113540, guid: 4d1c84dfd84655e429877e320eb2f8bb, type: 3}
   m_PrefabInstance: {fileID: 323342297}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &337617979
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
-        m_Scale: {x: 2.5, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
-        m_Scale: {x: 1.9618523, y: 5.76142}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &355689137
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,7 +4044,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm (1)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -4019,7 +4118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1182356625836322, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_Name
-      value: Wall_FireAlarm
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4917152870275608, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_RootOrder
@@ -4076,7 +4175,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644480926504366, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_Name
-      value: Shelving_5Tier_White (4)
+      value: Shelf
       objectReference: {fileID: 0}
     - target: {fileID: 4985506273562842, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_RootOrder
@@ -4239,7 +4338,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1640326012187318, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_Open
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4028938208196030, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_RootOrder
@@ -4429,7 +4528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1865375901946298, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_Name
-      value: ComputerMonitor_On (2)
+      value: Monitor
       objectReference: {fileID: 0}
     - target: {fileID: 4812368176069960, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_RootOrder
@@ -4491,7 +4590,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1220522176881388, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_Name
-      value: Wall_LightSwitch
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4237241941660864, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_RootOrder
@@ -4637,6 +4736,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
   m_PrefabInstance: {fileID: 1600254951}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &429561376
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
+        m_Scale: {x: 2.5, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
+        m_Scale: {x: 1.9618518, y: 5.809228}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &436116458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,7 +4959,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1652750922776214, guid: f85b1d5236adf79418e4a0d35072ae9c, type: 3}
       propertyPath: m_Name
-      value: Table_Conference
+      value: Table
       objectReference: {fileID: 0}
     - target: {fileID: 4911602345943986, guid: f85b1d5236adf79418e4a0d35072ae9c, type: 3}
       propertyPath: m_RootOrder
@@ -4855,7 +5033,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1129085155327168, guid: c9a70c867b40b5249bd652e9bb496bf4, type: 3}
       propertyPath: m_Name
-      value: Wall_Socket_ADSL
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4752879079113730, guid: c9a70c867b40b5249bd652e9bb496bf4, type: 3}
       propertyPath: m_RootOrder
@@ -4912,7 +5090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -4983,7 +5161,7 @@ GameObject:
   - component: {fileID: 469572609}
   - component: {fileID: 469572612}
   m_Layer: 0
-  m_Name: Floor (1)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5035,7 +5213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1737499940}
+  - {fileID: 429561376}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5180,7 +5358,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1453756952543616, guid: c6e099cc4e1600949908bdbc22465e27, type: 3}
       propertyPath: m_Name
-      value: Coat Stand (1)
+      value: Coat Stand
       objectReference: {fileID: 0}
     - target: {fileID: 4379921504821172, guid: c6e099cc4e1600949908bdbc22465e27, type: 3}
       propertyPath: m_RootOrder
@@ -5245,85 +5423,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4379921504821172, guid: c6e099cc4e1600949908bdbc22465e27, type: 3}
   m_PrefabInstance: {fileID: 496036090}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &496228741
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
-        m_Scale: {x: 2.5, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
-        m_Scale: {x: 1.9618518, y: 5.809228}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &507497073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,7 +5618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -5585,7 +5684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -5735,7 +5834,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1518565650833556, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_80cm (3)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4049896237817634, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_RootOrder
@@ -5809,7 +5908,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1220522176881388, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_Name
-      value: Wall_LightSwitch (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4237241941660864, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_RootOrder
@@ -5940,7 +6039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1670033011509986, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_Name
-      value: ProjectorScreen
+      value: Projector Screen
       objectReference: {fileID: 0}
     - target: {fileID: 4166240587004202, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_RootOrder
@@ -6215,7 +6314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1143601178626830, guid: 8c6fb535d541fdd4d97ba0b4d06d1705, type: 3}
       propertyPath: m_Name
-      value: BeerFridge
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 4516613359539068, guid: 8c6fb535d541fdd4d97ba0b4d06d1705, type: 3}
       propertyPath: m_RootOrder
@@ -6277,7 +6376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (4)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -6449,7 +6548,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (10)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -6790,7 +6889,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1640326012187318, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_Open (1)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4028938208196030, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_RootOrder
@@ -6864,7 +6963,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (6)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -7023,7 +7122,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1704241804205748, guid: d926a04d346a02b40bfb85092ae517d6, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B_Frame_C
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4532862505402514, guid: d926a04d346a02b40bfb85092ae517d6, type: 3}
       propertyPath: m_RootOrder
@@ -7242,7 +7341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A (5)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -7610,7 +7709,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1250052240728526, guid: 607a948f2212f564cb994309585bbad4, type: 3}
       propertyPath: m_Name
-      value: TeaCup
+      value: Cup
       objectReference: {fileID: 0}
     - target: {fileID: 4307081602056346, guid: 607a948f2212f564cb994309585bbad4, type: 3}
       propertyPath: m_RootOrder
@@ -7782,7 +7881,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1788196727961940, guid: d9402f028808db54a8cae4020a82de22, type: 3}
       propertyPath: m_Name
-      value: SideboardCabinet_A_Brown
+      value: Cabinet
       objectReference: {fileID: 0}
     - target: {fileID: 4464553967579874, guid: d9402f028808db54a8cae4020a82de22, type: 3}
       propertyPath: m_RootOrder
@@ -7861,7 +7960,7 @@ GameObject:
   - component: {fileID: 659256402}
   - component: {fileID: 659256405}
   m_Layer: 0
-  m_Name: Floor (3)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7913,7 +8012,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1928536218}
+  - {fileID: 1375768849}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8058,7 +8157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1682688738705030, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_Name
-      value: Wall_Divider_Short_A (1)
+      value: Divider
       objectReference: {fileID: 0}
     - target: {fileID: 4371264251558810, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_RootOrder
@@ -8213,7 +8312,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644480926504366, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_Name
-      value: Shelving_5Tier_White (2)
+      value: Shelf
       objectReference: {fileID: 0}
     - target: {fileID: 4985506273562842, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_RootOrder
@@ -8283,7 +8382,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -8361,7 +8460,7 @@ GameObject:
   - component: {fileID: 687133619}
   - component: {fileID: 687133618}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8457,7 +8556,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1725389150935060, guid: 22ec7787c02837047b1a36ad1b1696cf, type: 3}
       propertyPath: m_Name
-      value: Chair_DeskChair_Olive
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4231131956549986, guid: 22ec7787c02837047b1a36ad1b1696cf, type: 3}
       propertyPath: m_RootOrder
@@ -8531,7 +8630,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -9123,7 +9222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (3)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -9189,7 +9288,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket (5)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -9388,7 +9487,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -9478,7 +9577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1182356625836322, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_Name
-      value: Wall_FireAlarm (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4917152870275608, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_RootOrder
@@ -9616,7 +9715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644480926504366, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_Name
-      value: Shelving_5Tier_White (3)
+      value: Shelf
       objectReference: {fileID: 0}
     - target: {fileID: 4985506273562842, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_RootOrder
@@ -9785,7 +9884,7 @@ GameObject:
   - component: {fileID: 845016781}
   - component: {fileID: 845016780}
   m_Layer: 0
-  m_Name: Floor (2)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9876,7 +9975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1640326012187318, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_Open (1)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4028938208196030, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_RootOrder
@@ -9950,7 +10049,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1827128376059528, guid: 3270b0f1082d4b04fb3df4b3ea4afa44, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_HotBeverages
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4127282374421382, guid: 3270b0f1082d4b04fb3df4b3ea4afa44, type: 3}
       propertyPath: m_RootOrder
@@ -10137,7 +10236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1114525698681854, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4717767209960708, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_RootOrder
@@ -10616,7 +10715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1805776145866518, guid: f3b9ebbf9703e364fb864e6cf56c10bc, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Red
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4041018148208476, guid: f3b9ebbf9703e364fb864e6cf56c10bc, type: 3}
       propertyPath: m_RootOrder
@@ -10690,7 +10789,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (7)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -10764,7 +10863,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1364315104730290, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_Name
-      value: Dining_Canteen_Table (1)
+      value: Table
       objectReference: {fileID: 0}
     - target: {fileID: 4789048282950122, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_RootOrder
@@ -10915,6 +11014,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908072174}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &909215634
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
+        m_Scale: {x: 2.5, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
+        m_Scale: {x: 1.9618518, y: 5.809228}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &910915435
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,7 +11264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A (4)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -11251,7 +11429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1956288924743198, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_Name
-      value: Cubicle_Shower (1)
+      value: Cubicle
       objectReference: {fileID: 0}
     - target: {fileID: 4406549456433336, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_RootOrder
@@ -11317,7 +11495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1518565650833556, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_80cm (2)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4049896237817634, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_RootOrder
@@ -11465,7 +11643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1865375901946298, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_Name
-      value: ComputerMonitor_On (1)
+      value: Monitor
       objectReference: {fileID: 0}
     - target: {fileID: 4812368176069960, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_RootOrder
@@ -12028,7 +12206,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1865375901946298, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_Name
-      value: ComputerMonitor_On
+      value: Monitor
       objectReference: {fileID: 0}
     - target: {fileID: 4812368176069960, guid: d436a8e3df58e5a4391298b94206bb9a, type: 3}
       propertyPath: m_RootOrder
@@ -12090,7 +12268,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm (4)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -12152,7 +12330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1899937691701558, guid: 282a514ee8a63644c880245f7085a2d8, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_C
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4754143771160348, guid: 282a514ee8a63644c880245f7085a2d8, type: 3}
       propertyPath: m_RootOrder
@@ -12205,85 +12383,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4754143771160348, guid: 282a514ee8a63644c880245f7085a2d8, type: 3}
   m_PrefabInstance: {fileID: 1026800298}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1027542798
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
-        m_Scale: {x: 2.5, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
-        m_Scale: {x: 1.9618518, y: 5.8}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1036550568
 GameObject:
   m_ObjectHideFlags: 0
@@ -12560,7 +12659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket (4)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -12891,7 +12990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1518565650833556, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_80cm (1)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4049896237817634, guid: bacc47625d871234dae9a59b3469a0f8, type: 3}
       propertyPath: m_RootOrder
@@ -13311,7 +13410,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030124793428090, guid: cb3208444e4cc184e973efa17c804485, type: 3}
       propertyPath: m_Name
-      value: Vase_Profiled2_Orange
+      value: Vase
       objectReference: {fileID: 0}
     - target: {fileID: 4003645297299384, guid: cb3208444e4cc184e973efa17c804485, type: 3}
       propertyPath: m_RootOrder
@@ -13424,7 +13523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663408535430466, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_ColdBeverages (2)
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_RootOrder
@@ -13486,7 +13585,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1114525698681854, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4717767209960708, guid: 4f772a775d8a6e34480e9b9dc24959a5, type: 3}
       propertyPath: m_RootOrder
@@ -13548,7 +13647,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -13614,7 +13713,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1640326012187318, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_Open
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4028938208196030, guid: a82477087bdc90741bd0a0ba617a54f6, type: 3}
       propertyPath: m_RootOrder
@@ -13676,7 +13775,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -13787,7 +13886,7 @@ GameObject:
   - component: {fileID: 1171673229}
   - component: {fileID: 1171673228}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14064,7 +14163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1497655476124062, guid: db624d999bbb8194bb4e62ed48e66969, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Olive
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4599975392549768, guid: db624d999bbb8194bb4e62ed48e66969, type: 3}
       propertyPath: m_RootOrder
@@ -14138,7 +14237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (9)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -14217,7 +14316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (2)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -14291,7 +14390,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -14446,7 +14545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket (3)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -14601,7 +14700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1364315104730290, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_Name
-      value: Dining_Canteen_Table
+      value: Table
       objectReference: {fileID: 0}
     - target: {fileID: 4789048282950122, guid: 5d395b455a5694e44ad2ad896657cd56, type: 3}
       propertyPath: m_RootOrder
@@ -14768,7 +14867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1893840993421058, guid: 2b7a47e5f0e13b64681b2c67b400d6da, type: 3}
       propertyPath: m_Name
-      value: Clock_WallClock
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4879647541654262, guid: 2b7a47e5f0e13b64681b2c67b400d6da, type: 3}
       propertyPath: m_RootOrder
@@ -14825,7 +14924,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1682688738705030, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_Name
-      value: Wall_Divider_Short_A (2)
+      value: Divider
       objectReference: {fileID: 0}
     - target: {fileID: 4371264251558810, guid: 9ae0ee9ebd9cfcc4a961adb9de1554ee, type: 3}
       propertyPath: m_RootOrder
@@ -14994,7 +15093,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A (3)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -15056,7 +15155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (3)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -15223,7 +15322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (5)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -15297,7 +15396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1182356625836322, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_Name
-      value: Wall_FireAlarm (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4917152870275608, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_RootOrder
@@ -15435,7 +15534,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm (3)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -15500,6 +15599,158 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
   m_PrefabInstance: {fileID: 1357619386}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1375768849
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ceiling Tiles
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
+        m_Scale: {x: 2.5, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
+        m_Scale: {x: 1.9618523, y: 5.708576}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1375950581
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ceiling Tiles
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
+        m_Scale: {x: 2.5, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
+        m_Scale: {x: 1.9618523, y: 5.76142}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1382760208
 GameObject:
   m_ObjectHideFlags: 0
@@ -15676,7 +15927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm (2)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -15750,7 +16001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -15821,7 +16072,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1120516147039708, guid: eb3471a635f00af49a19cda311652865, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_D (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4394130725942720, guid: eb3471a635f00af49a19cda311652865, type: 3}
       propertyPath: m_RootOrder
@@ -15883,7 +16134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (12)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -16011,7 +16262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (7)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -16077,7 +16328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663408535430466, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_ColdBeverages (1)
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_RootOrder
@@ -16139,7 +16390,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663408535430466, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_ColdBeverages (2)
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_RootOrder
@@ -16379,7 +16630,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1283318782105778, guid: b56fbb0a4e1a1d54fbae9335fbb42c8a, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_B (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4137540189333096, guid: b56fbb0a4e1a1d54fbae9335fbb42c8a, type: 3}
       propertyPath: m_RootOrder
@@ -16534,7 +16785,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1182356625836322, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_Name
-      value: Wall_FireAlarm
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4917152870275608, guid: 040e926c27512584fa7e1e97d0ae62f6, type: 3}
       propertyPath: m_RootOrder
@@ -16672,7 +16923,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1956288924743198, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_Name
-      value: Cubicle_Shower (3)
+      value: Cubicle
       objectReference: {fileID: 0}
     - target: {fileID: 4406549456433336, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_RootOrder
@@ -16738,7 +16989,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1331707018736974, guid: b261f5316b925184ea5ee3155bd868e1, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Violet (1)
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4644760339231400, guid: b261f5316b925184ea5ee3155bd868e1, type: 3}
       propertyPath: m_RootOrder
@@ -16893,7 +17144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -16990,7 +17241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (8)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -17064,7 +17315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (3)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -17130,7 +17381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644480926504366, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_Name
-      value: Shelving_5Tier_White
+      value: Shelf
       objectReference: {fileID: 0}
     - target: {fileID: 4985506273562842, guid: 1eb1dd62223d06041b1856822af47f3e, type: 3}
       propertyPath: m_RootOrder
@@ -17200,7 +17451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1956288924743198, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_Name
-      value: Cubicle_Shower (2)
+      value: Cubicle
       objectReference: {fileID: 0}
     - target: {fileID: 4406549456433336, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_RootOrder
@@ -17266,7 +17517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579550022804046, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_Name
-      value: Wall_ElectricSocket (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4545786659773854, guid: 7749f66696ade22429af0649d9fbcb01, type: 3}
       propertyPath: m_RootOrder
@@ -17323,7 +17574,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (8)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -17397,7 +17648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1956288924743198, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_Name
-      value: Cubicle_Shower
+      value: Cubicle
       objectReference: {fileID: 0}
     - target: {fileID: 4406549456433336, guid: 21ba93ab041f92d44a2dffa5a285eb79, type: 3}
       propertyPath: m_RootOrder
@@ -17468,7 +17719,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1263412607140750, guid: f27c6a7641d67f5418617f218cfc3fd6, type: 3}
       propertyPath: m_Name
-      value: Desk_Corner_Booth_D_Open_Black
+      value: Desk
       objectReference: {fileID: 0}
     - target: {fileID: 4368099102194110, guid: f27c6a7641d67f5418617f218cfc3fd6, type: 3}
       propertyPath: m_RootOrder
@@ -17542,7 +17793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1788866599303790, guid: bf5f0313051a91c429401d2f0e008f48, type: 3}
       propertyPath: m_Name
-      value: FishTank
+      value: Fish Tank
       objectReference: {fileID: 0}
     - target: {fileID: 4325115203448566, guid: bf5f0313051a91c429401d2f0e008f48, type: 3}
       propertyPath: m_RootOrder
@@ -17616,7 +17867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1316189854084592, guid: 14934473909006843abb8d3693efbfa6, type: 3}
       propertyPath: m_Name
-      value: Phone_DeskPhone
+      value: Phone
       objectReference: {fileID: 0}
     - target: {fileID: 4237566889002258, guid: 14934473909006843abb8d3693efbfa6, type: 3}
       propertyPath: m_RootOrder
@@ -17771,7 +18022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663408535430466, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_ColdBeverages (1)
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_RootOrder
@@ -17930,7 +18181,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -17996,7 +18247,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1220522176881388, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_Name
-      value: Wall_LightSwitch
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4237241941660864, guid: 2b0a0dcae0f8e6944b6da45ab1806bfd, type: 3}
       propertyPath: m_RootOrder
@@ -18053,7 +18304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1579465014754942, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_Name
-      value: CardboardBox_40cm (1)
+      value: Cardboard Box
       objectReference: {fileID: 0}
     - target: {fileID: 4069536207467872, guid: a91a01e569eed4f438d12e5a508e6e0b, type: 3}
       propertyPath: m_RootOrder
@@ -18127,7 +18378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1120516147039708, guid: eb3471a635f00af49a19cda311652865, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_D
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4394130725942720, guid: eb3471a635f00af49a19cda311652865, type: 3}
       propertyPath: m_RootOrder
@@ -18184,7 +18435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (5)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -18245,7 +18496,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1838612453396606, guid: b124f24a3d3ba8041962b406bfdfe1d3, type: 3}
       propertyPath: m_Name
-      value: Desk_Corner_Booth_A
+      value: Desk
       objectReference: {fileID: 0}
     - target: {fileID: 4787858631330206, guid: b124f24a3d3ba8041962b406bfdfe1d3, type: 3}
       propertyPath: m_RootOrder
@@ -18500,7 +18751,7 @@ GameObject:
   - component: {fileID: 1691073102}
   - component: {fileID: 1691073101}
   m_Layer: 0
-  m_Name: Floor (2)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18565,7 +18816,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 496228741}
+  - {fileID: 909215634}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18604,7 +18855,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1352043510994376, guid: 74b4f6159d38944429630aef6e71453e, type: 3}
       propertyPath: m_Name
-      value: Chair_Office_Green
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 4110493057773920, guid: 74b4f6159d38944429630aef6e71453e, type: 3}
       propertyPath: m_RootOrder
@@ -18894,7 +19145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (8)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -19041,7 +19292,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663408535430466, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_ColdBeverages
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
       propertyPath: m_RootOrder
@@ -19098,85 +19349,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4850636089561670, guid: 9a2b421a8a51b3d468c3c54fd3b8fcf6, type: 3}
   m_PrefabInstance: {fileID: 1728338338}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1737499940
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
-        m_Scale: {x: 2.5, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
-        m_Scale: {x: 1.9618518, y: 5.809228}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1749599279
 GameObject:
   m_ObjectHideFlags: 0
@@ -19271,7 +19443,7 @@ GameObject:
   - component: {fileID: 1753007682}
   - component: {fileID: 1753007681}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19730,7 +19902,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (6)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -19809,7 +19981,7 @@ GameObject:
   - component: {fileID: 1783726110}
   - component: {fileID: 1783726109}
   m_Layer: 0
-  m_Name: Floor (4)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19874,7 +20046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1027542798}
+  - {fileID: 77560314}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20334,7 +20506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1451693412413204, guid: baf6a6054ad95e643bb77b27da6c2428, type: 3}
       propertyPath: m_Name
-      value: Wall_Divider_Pillar (1)
+      value: Pillar
       objectReference: {fileID: 0}
     - target: {fileID: 4436707954246248, guid: baf6a6054ad95e643bb77b27da6c2428, type: 3}
       propertyPath: m_RootOrder
@@ -20396,7 +20568,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1943849282025556, guid: 6216dab760cb42e49b8191a66335fc24, type: 3}
       propertyPath: m_Name
-      value: Vase_Round_Red
+      value: Vase
       objectReference: {fileID: 0}
     - target: {fileID: 4924331821767128, guid: 6216dab760cb42e49b8191a66335fc24, type: 3}
       propertyPath: m_RootOrder
@@ -20725,7 +20897,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (4)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -20872,7 +21044,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1453756952543616, guid: c6e099cc4e1600949908bdbc22465e27, type: 3}
       propertyPath: m_Name
-      value: Coat Stand (2)
+      value: Coat Stand
       objectReference: {fileID: 0}
     - target: {fileID: 4379921504821172, guid: c6e099cc4e1600949908bdbc22465e27, type: 3}
       propertyPath: m_RootOrder
@@ -21041,7 +21213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (1)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -21115,7 +21287,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1670033011509986, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_Name
-      value: ProjectorScreen (3)
+      value: Projector Screen
       objectReference: {fileID: 0}
     - target: {fileID: 4166240587004202, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_RootOrder
@@ -21172,85 +21344,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4166240587004202, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
   m_PrefabInstance: {fileID: 1907611584}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1928536218
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ceiling Tiles (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 85b16362fba66824c9312191f2dd20f9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: f961733b0a2bb714c86c7291c4816547, type: 3}
-        m_Scale: {x: 2.5, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 217ad85fed97d9f40acbf4700a86c5e7, type: 3}
-        m_Scale: {x: 1.9618523, y: 5.708576}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0b55cb5621c08a0428092e6b24c35f9c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4d2d90e834c0249448bf4906b5b496e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1935533688
 GameObject:
   m_ObjectHideFlags: 0
@@ -21353,7 +21446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (11)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -21607,7 +21700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1283318782105778, guid: b56fbb0a4e1a1d54fbae9335fbb42c8a, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A_Frame_B
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4137540189333096, guid: b56fbb0a4e1a1d54fbae9335fbb42c8a, type: 3}
       propertyPath: m_RootOrder
@@ -21881,7 +21974,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1827128376059528, guid: 3270b0f1082d4b04fb3df4b3ea4afa44, type: 3}
       propertyPath: m_Name
-      value: VendingMachine_HotBeverages (1)
+      value: Vending Machine
       objectReference: {fileID: 0}
     - target: {fileID: 4127282374421382, guid: 3270b0f1082d4b04fb3df4b3ea4afa44, type: 3}
       propertyPath: m_RootOrder
@@ -21943,7 +22036,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1718229891699152, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A (6)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4233851531927038, guid: ffd84ed5789294d47ac95d8054ac98b5, type: 3}
       propertyPath: m_RootOrder
@@ -22008,7 +22101,7 @@ GameObject:
   - component: {fileID: 1985000666}
   - component: {fileID: 1985000665}
   m_Layer: 0
-  m_Name: Floor (3)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22192,7 +22285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1916644179334294, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_A (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4008365627163444, guid: deade6aa61fbf164f88ed71bd002d909, type: 3}
       propertyPath: m_RootOrder
@@ -22528,7 +22621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571486302748732, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_Name
-      value: Server_Base (4)
+      value: Server Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4132683640802668, guid: 2ba2c1cd65fabbb4e965511be61b58d9, type: 3}
       propertyPath: m_RootOrder
@@ -22882,7 +22975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1704241804205748, guid: d926a04d346a02b40bfb85092ae517d6, type: 3}
       propertyPath: m_Name
-      value: Wall_3m_A_Window_B_Frame_C (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4532862505402514, guid: d926a04d346a02b40bfb85092ae517d6, type: 3}
       propertyPath: m_RootOrder
@@ -22944,7 +23037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1688515315254712, guid: ff89af52f6b8e9e47b794d082d7c46e4, type: 3}
       propertyPath: m_Name
-      value: ComputerKeyboard
+      value: Keyboard
       objectReference: {fileID: 0}
     - target: {fileID: 4156108201418478, guid: ff89af52f6b8e9e47b794d082d7c46e4, type: 3}
       propertyPath: m_RootOrder
@@ -23101,7 +23194,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1670033011509986, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_Name
-      value: ProjectorScreen (1)
+      value: Projector Screen
       objectReference: {fileID: 0}
     - target: {fileID: 4166240587004202, guid: eb3ae40791bf08d4dbbbcca78db71a83, type: 3}
       propertyPath: m_RootOrder

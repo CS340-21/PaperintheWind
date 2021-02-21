@@ -7,8 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    // The parent player object
-    private GameObject Player { get { return gameObject; } }
+    private PlayerController controller { get { return PlayerManager.Instance.Controller; } }
 
     private InputSource Inputs;
 
@@ -48,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
     {
         string cellTag = string.Format("({0},{1})", Position.Item1, Position.Item2);
 
-        GameObject parent = PlayerManager.Instance.Controller.CurrentSection.PreTurn;
-        if (parent == null) parent = PlayerManager.Instance.Controller.CurrentSection.PostTurn;
+        GameObject parent = controller.CurrentSection.PreTurn;
+        if (parent == null) parent = controller.CurrentSection.PostTurn;
 
         return parent.transform.Find(cellTag).transform.position;
     }
@@ -63,11 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (rotation == 0 || rotation == 180)
         {
-            return new Vector3(cell.x, cell.y, Player.transform.position.z);
+            return new Vector3(cell.x, cell.y, transform.position.z);
         }
         else if (rotation == 90 || rotation == -90)
         {
-            return new Vector3(Player.transform.position.x, cell.y, cell.z);
+            return new Vector3(transform.position.x, cell.y, cell.z);
         }
         else
         {
@@ -80,8 +79,6 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void MoveDirection(string dir)
     {
-        PlayerController controller = PlayerManager.Instance.Controller;
-
         switch (dir)
         {
             case "down":
@@ -132,20 +129,20 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void TurnDirection(string dir)
     {
-        if (PlayerManager.Instance.Controller.CurrentSection.PreTurn == null) return;
-        Destroy(PlayerManager.Instance.Controller.CurrentSection.PreTurn);
+        if (controller.CurrentSection.PreTurn == null) return;
+        Destroy(controller.CurrentSection.PreTurn);
 
         TurnPossibility = null;
 
         if (dir == "right")
         {
             Rotation = Utils.ResetAngle(Rotation + 90);
-            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Right");
+            controller.TriggerPaperAnimation("Flip Right");
         }
         else if (dir == "left")
         {
             Rotation = Utils.ResetAngle(Rotation - 90);
-            PlayerManager.Instance.Controller.TriggerPaperAnimation("Flip Left");
+            controller.TriggerPaperAnimation("Flip Left");
         }
 
         this.PlayRotateAnimation(dir);
@@ -159,8 +156,6 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void PlayRotateAnimation(string dir)
     {
-        PlayerController controller = PlayerManager.Instance.Controller;
-
         switch (Rotation)
         {
             case 0:
@@ -215,11 +210,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementGridCell = this.GetChosen3DVector();
 
         // Constantly move forward to the chosen movement grid cell in the 3D world
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position, movementGridCell, Time.deltaTime * Speed);
+        transform.position = Vector3.MoveTowards(transform.position, movementGridCell, Time.deltaTime * Speed);
 
         // Linearly interpolate (lerp) from player's current position to the chosen movement grid cell on the 2D plane
-        if (Player.transform.rotation.eulerAngles.y % 90 == 0)
-            Player.transform.position = Vector3.Lerp(Player.transform.position, this.GetChosen2DVector(movementGridCell), Time.deltaTime * FlipSpeed);
+        if (transform.rotation.eulerAngles.y % 90 == 0)
+            transform.position = Vector3.Lerp(transform.position, this.GetChosen2DVector(movementGridCell), Time.deltaTime * FlipSpeed);
     }
 
 }

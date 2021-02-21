@@ -82,7 +82,6 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - WebGL
-    - iPhone
     - Standalone
   - serializedVersion: 2
     name: Medium
@@ -121,8 +120,8 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - WebGL
-    - iPhone
     - Standalone
+    - iPhone
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -158,7 +157,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 1
