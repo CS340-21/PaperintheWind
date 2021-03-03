@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
+    private PlayerController controller { get { return PlayerManager.Instance.Controller; } }
+
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController controller = PlayerManager.Instance.Controller;
-
         switch (other.gameObject.tag)
         {
             case "right_turn":
@@ -29,7 +29,8 @@ public class PlayerCollision : MonoBehaviour
 
             default:
                 Debug.Log("ran into " + other.name);
-                PlayerManager.Instance.Controller.Kill();
+                Utils.DebugInGame("ran into " + other.name);
+                controller.Kill();
                 return;
         }
     }
@@ -39,7 +40,7 @@ public class PlayerCollision : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "turn":
-                PlayerManager.Instance.Controller.SetTurnPossibility(null);
+                controller.SetTurnPossibility(null);
                 return;
         }
     }

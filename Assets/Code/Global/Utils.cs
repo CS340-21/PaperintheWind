@@ -19,6 +19,18 @@ public class Utils
 #endif
     }
 
+    public static void DebugInGame(string msg)
+    {
+        PlayerHUDDebug hud = PlayerManager.Instance.Controller.gameObject.GetComponent<PlayerHUDDebug>();
+        hud.PushText(msg);
+    }
+
+    public static void DebugInGame(string id, string msg)
+    {
+        PlayerHUDDebug hud = PlayerManager.Instance.Controller.gameObject.GetComponent<PlayerHUDDebug>();
+        hud.UpdateText(id, msg);
+    }
+
     /// <summary>
     /// Get a random element from the given list
     /// </summary>

@@ -69,7 +69,7 @@ public class TouchInput : InputSource
 
     private void PerformSwipe(string dir)
     {
-        PlayerManager.Instance.Controller.MovementController.MoveDirection(dir);
+        controller.MovementController.MoveDirection(dir);
         LastSwipeTime = Time.time;
         FingerUp = FingerDown;
     }

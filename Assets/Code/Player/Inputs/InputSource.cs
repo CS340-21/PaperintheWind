@@ -5,10 +5,10 @@ using UnityEngine;
 public abstract class InputSource
 {
 
+    protected PlayerController controller { get { return PlayerManager.Instance.Controller; } }
+
     public void Process()
     {
-        PlayerController controller = PlayerManager.Instance.Controller;
-
         // probably replace this with menu system
         if (Input.anyKey)
         {
