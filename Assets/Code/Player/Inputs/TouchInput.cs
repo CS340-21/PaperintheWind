@@ -9,7 +9,7 @@ public class TouchInput : InputSource
     private float SwipeThreshold = 45f;
 
     // How long to wait (in seconds) between detecting swipes
-    private float SwipeCooldown = 0.15f;
+    private float SwipeCooldown = 0.25f;
 
     // Time of the last swipe
     private float LastSwipeTime = 0f;
@@ -50,20 +50,24 @@ public class TouchInput : InputSource
         if (SwipeDelta.x > SwipeThreshold)
         {
             this.PerformSwipe("left");
+            return;
         }
         else if (SwipeDelta.x < -SwipeThreshold)
         {
             this.PerformSwipe("right");
+            return;
         }
 
         // Up/down
         if (SwipeDelta.y > SwipeThreshold)
         {
             this.PerformSwipe("down");
+            return;
         }
         else if (SwipeDelta.y < -SwipeThreshold)
         {
             this.PerformSwipe("up");
+            return;
         }
     }
 
