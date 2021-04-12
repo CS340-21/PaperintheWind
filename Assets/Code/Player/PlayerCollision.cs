@@ -29,7 +29,8 @@ public class PlayerCollision : MonoBehaviour
 
             default:
                 Debug.Log("ran into " + other.name);
-                Utils.DebugInGame("ran into " + other.name);
+                MenuController.Instance.CollisionResultText.text = string.Format("After running into a {0}, you earned", other.name.ToLower());
+                // Utils.DebugInGame("ran into " + other.name);
                 controller.Kill();
                 return;
         }

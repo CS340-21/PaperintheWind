@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     public float DeathTime = 0f;
 
+    public float PointsEarned = 0;
+
     private void Awake()
     {
         if (MovementController == null)
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
         this.DeathTime = Time.unscaledTime;
         CameraAnimation.SetBool("Dead", true);
+        StartCoroutine(ShowMenu());
     }
 
     /// <summary>
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         MovementController.Rotation = 0;
         Time.timeScale = 1f;
         this.DeathTime = 0f;
+        this.PointsEarned = 0f;
     }
 
     /// <summary>
@@ -64,6 +68,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1);
         PaperAnimation.ResetTrigger("Died");
         PlayerAnimation.ResetTrigger("ResetRotation");
+    }
+
+    /// <summary>
+    /// Reset the player's animations to the default state
+    /// </summary>
+    private IEnumerator ShowMenu()
+    {
+        yield return new WaitForSecondsRealtime(0.6f);
+        MenuController.Instance.ShowDeathScreen((int)PointsEarned);
     }
 
     /// <summary>
