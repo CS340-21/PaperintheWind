@@ -53,7 +53,7 @@ public class PlayerHUDDebug : MonoBehaviour
         // Draw fps counter
         Rect rect = new Rect(50, 150, width, height * 2 / 100);
         string text = string.Format("{0:0.0} ms ({1:0.} fps)", deltaTime * 1000.0f, 1.0f / deltaTime);
-        GUI.Label(rect, text, style);
+        // GUI.Label(rect, text, style);
 
         int y = 150;
 

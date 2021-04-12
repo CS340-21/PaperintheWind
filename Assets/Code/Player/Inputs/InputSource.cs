@@ -10,16 +10,16 @@ public abstract class InputSource
     public void Process()
     {
         // probably replace this with menu system
-        if (Input.anyKey)
-        {
-            if (controller.DeathTime != 0)
-            {
-                if (Time.unscaledTime - controller.DeathTime > 1)
-                    LevelManager.Instance.CurrentLevel.RestartLevel();
+        // if (Input.anyKey)
+        // {
+        //     if (controller.DeathTime != 0)
+        //     {
+        //         if (Time.unscaledTime - controller.DeathTime > 1)
+        //             LevelManager.Instance.CurrentLevel.RestartLevel();
 
-                return;
-            }
-        }
+        //         return;
+        //     }
+        // }
 
         this.ProcessInputType();
     }
