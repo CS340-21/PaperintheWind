@@ -11,6 +11,8 @@ Our project is a video game for mobile phones running iOS and Android operating 
 
 The player is infinitely moving in one direction, with the camera placed behind the paper. The player has no option to slow down their movement or turn around. They have a limited control set where they are only able to move in predefined positions, forcing them to continuously make last-second decisions on the best route to take. There are several games with a similar nature, aptly titled “endless runner” games where the player is constantly moving in a predefined direction and avoiding anything that could end their run.
 
+<p align="center"><img src="https://i.imgur.com/hhDKP4e.png" width="500" /></p>
+
 The main motivation for this product is the fact that video games are among the most engaging ways to use one’s free time. In 2020, Statista estimated that around 2.7 billion people played video games actively [1]. Even further, 2.5 billion of these gamers played on their mobile devices (potentially in addition to other platforms). Therefore, our game reaches an extremely large market by being developed for iOS and Android. Additionally, our team is a group of avid gamers and very much enjoy the pleasure found by playing video games. We were around for the explosion of mobile games and therefore see the value in developing our own—we enjoyed the process of creating a game as much as we enjoy playing a game.
 
 Between the proposal of our project and the completion of our project, we unfortunately had to modify some of our goals. Time constraints as well as other responsibilites led to a decreased number of goals met by the group. Some of the major changes we had to make to our plans include:
