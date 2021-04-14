@@ -7,7 +7,7 @@ Greg Cantrall, Ryan Forsten, Joey Lemon, Brandon Mingledorff
 
 ## I. Introduction
 
-Our project is a video game with the main marketed platform being mobile phones running iOS and Android operating systems. The game may also be available on web browsers and desktop computers. The general premise of the game involves the player as a piece of paper, flying through different environments and avoiding obstacles along the way. The goal of the game is to make it as far as possible in the level without dying—the player will earn points for every meter travelled.
+Our project is a video game for mobile phones running iOS and Android operating systems. The general premise of the game involves the player as a piece of paper, flying through different environments and avoiding obstacles along the way. The goal of the game is to make it as far as possible in the level without dying—the player will earn points for every meter travelled.
 
 The player is infinitely moving in one direction, with the camera placed behind the paper. The player has no option to slow down their movement or turn around. They have a limited control set where they are only able to move in predefined positions, forcing them to continuously make last-second decisions on the best route to take. There are several games with a similar nature, aptly titled “endless runner” games where the player is constantly moving in a predefined direction and avoiding anything that could end their run.
 
