@@ -16,13 +16,22 @@ public class RandomTransform : MonoBehaviour
         switch (TransformProperty)
         {
             case "rotation_x":
-                gameObject.transform.Rotate(randomValue, 0f, 0f);
+                transform.Rotate(randomValue, 0f, 0f);
                 break;
             case "rotation_y":
-                gameObject.transform.Rotate(0f, randomValue, 0f);
+                transform.Rotate(0f, randomValue, 0f);
                 break;
             case "rotation_z":
-                gameObject.transform.Rotate(0f, 0f, randomValue);
+                transform.Rotate(0f, 0f, randomValue);
+                break;
+            case "position_x":
+                transform.position = new Vector3(transform.position.x + randomValue, transform.position.y, transform.position.z);
+                break;
+            case "position_y":
+                transform.position = new Vector3(transform.position.x, transform.position.y + randomValue, transform.position.z);
+                break;
+            case "position_z":
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + randomValue);
                 break;
             default:
                 Utils.Crash("RandomTransform script given an invalid transform property: " + TransformProperty);

@@ -209,12 +209,17 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movementGridCell = this.GetChosen3DVector();
 
-        // Constantly move forward to the chosen movement grid cell in the 3D world
-        transform.position = Vector3.MoveTowards(transform.position, movementGridCell, Time.deltaTime * Speed);
+        if (Time.unscaledTime - controller.ReviveTime > Constants.RespawnWaitTime)
+        {
+            // Constantly move forward to the chosen movement grid cell in the 3D world
+            transform.position = Vector3.MoveTowards(transform.position, movementGridCell, Time.deltaTime * Speed);
+        }
 
         // Linearly interpolate (lerp) from player's current position to the chosen movement grid cell on the 2D plane
         if (transform.rotation.eulerAngles.y % 90 == 0)
+        {
             transform.position = Vector3.Lerp(transform.position, this.GetChosen2DVector(movementGridCell), Time.deltaTime * FlipSpeed);
+        }
     }
 
 }

@@ -44,6 +44,7 @@ public class MenuController : MonoBehaviour
         PlayButtonImage[0].gameObject.SetActive(false);
         PlayButtonImage[1].gameObject.SetActive(true);
         StartCoroutine(BeginGameAfterDelay(0.3f));
+        HUDController.Instance.DisplayWaitIndicator();
     }
 
     private IEnumerator BeginGameAfterDelay(float time)

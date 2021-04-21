@@ -6,10 +6,10 @@ public class TouchInput : InputSource
 {
 
     // How many pixels the finger must move to be a swipe
-    private float SwipeThreshold = 45f;
+    private float SwipeThreshold = 25f;
 
     // How long to wait (in seconds) between detecting swipes
-    private float SwipeCooldown = 0.25f;
+    private float SwipeCooldown = 0.15f;
 
     // Time of the last swipe
     private float LastSwipeTime = 0f;
@@ -33,8 +33,7 @@ public class TouchInput : InputSource
                 FingerDown = touch.position;
             }
 
-            // Detects swipe while finger is still moving
-            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended)
             {
                 FingerDown = touch.position;
                 CheckSwipeDirection();
@@ -44,30 +43,35 @@ public class TouchInput : InputSource
 
     private void CheckSwipeDirection()
     {
-        Vector2 SwipeDelta = FingerUp - FingerDown;
+        float verticalMove = Mathf.Abs(FingerDown.y - FingerUp.y);
+        float horizontalMove = Mathf.Abs(FingerDown.x - FingerUp.x);
 
-        // Left/right
-        if (SwipeDelta.x > SwipeThreshold)
+        // Check if vertical swipe
+        if (verticalMove > SwipeThreshold && verticalMove > horizontalMove)
         {
-            this.PerformSwipe("left");
-            return;
-        }
-        else if (SwipeDelta.x < -SwipeThreshold)
-        {
-            this.PerformSwipe("right");
-            return;
+            if (FingerDown.y - FingerUp.y > 0)
+            {
+                this.PerformSwipe("up");
+            }
+            else if (FingerDown.y - FingerUp.y < 0)
+            {
+                this.PerformSwipe("down");
+            }
+            FingerUp = FingerDown;
         }
 
-        // Up/down
-        if (SwipeDelta.y > SwipeThreshold)
+        // Check if horizontal swipe
+        else if (horizontalMove > SwipeThreshold && horizontalMove > verticalMove)
         {
-            this.PerformSwipe("down");
-            return;
-        }
-        else if (SwipeDelta.y < -SwipeThreshold)
-        {
-            this.PerformSwipe("up");
-            return;
+            if (FingerDown.x - FingerUp.x > 0)
+            {
+                this.PerformSwipe("right");
+            }
+            else if (FingerDown.x - FingerUp.x < 0)
+            {
+                this.PerformSwipe("left");
+            }
+            FingerUp = FingerDown;
         }
     }
 

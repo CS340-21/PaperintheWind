@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public Section CurrentSection;
 
+    public float ReviveTime = 0f;
+
     public float DeathTime = 0f;
 
     public float PointsEarned = 0;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public void Kill()
     {
         Time.timeScale = 0f;
+        this.ReviveTime = 0f;
         this.DeathTime = Time.unscaledTime;
         CameraAnimation.SetBool("Dead", true);
         StartCoroutine(ShowMenu());
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
         MovementController.Position = (1, 1);
         MovementController.Rotation = 0;
         Time.timeScale = 1f;
+        this.ReviveTime = Time.unscaledTime;
         this.DeathTime = 0f;
         this.PointsEarned = 0f;
     }
