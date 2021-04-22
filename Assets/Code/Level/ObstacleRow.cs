@@ -9,8 +9,6 @@ using UnityEngine;
 public class ObstacleRow : MonoBehaviour
 {
 
-    public Section ParentSection;
-
     private GameObject[] GetChildren()
     {
         List<GameObject> children = new List<GameObject>();
@@ -23,10 +21,7 @@ public class ObstacleRow : MonoBehaviour
 
     void Start()
     {
-        if (ParentSection == null)
-            Utils.Crash("obstacle row has no parent section");
-
-        if (ParentSection.ID > 0)
+        if (Utils.GetParentSection(gameObject).ID > 0)
             Destroy(Utils.GetRandom(this.GetChildren()));
     }
 
